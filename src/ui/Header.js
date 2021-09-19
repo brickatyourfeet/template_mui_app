@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')] : {
       //height: '5em'
-      width: '3em'
+      width: '8em'
     }
   },
   logoContainer: {
