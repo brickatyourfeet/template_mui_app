@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import { cloneDeep } from "lodash";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -377,6 +377,8 @@ export default function Consultation() {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
+  const aRef =useRef(null);
+
   const [questions, setQuestions] = useState(defaultQuestions);
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -404,6 +406,7 @@ export default function Consultation() {
   const [loading, setLoading] = useState(false);
 
   const nextQuestion = () => {
+    if(matchesSM) window.scrollTo(0, myRef.current.offsetTop + 75)
     const newQuestions = cloneDeep(questions); //making actual copy that keep nested values and doesn't alter original
 
     const currentlyActive = newQuestions.filter(question => question.active);
@@ -417,6 +420,7 @@ export default function Consultation() {
   };
 
   const previousQuestion = () => {
+    if(matchesSM) window.scrollTo(0, myRef.current.offsetTop + 75)
     const newQuestions = cloneDeep(questions);  //making actual copy that keep nested values and doesn't alter original
 
     const currentlyActive = newQuestions.filter(question => question.active);
@@ -498,6 +502,7 @@ export default function Consultation() {
 
     switch (newSelected.title) { //again -- just make service1 ONLY until later. or ever.
       case "Service 1": //tinctures
+        if(matchesSM) window.scrollTo(0, myRef.current.offsetTop + 75)
         setQuestions(tinctureQuestions);
         setService(newSelected.title);
         setConcerns([]);
@@ -507,6 +512,7 @@ export default function Consultation() {
         setSubService("");
         break;
       case "Service 2":
+        if(matchesSM) window.scrollTo(0, myRef.current.offsetTop + 75)
         setQuestions(tinctureQuestions);
         setService(newSelected.title);
         setConcerns([]);
@@ -516,6 +522,7 @@ export default function Consultation() {
         setSubService("");
         break;
       case "Service 3":
+        if(matchesSM) window.scrollTo(0, myRef.current.offsetTop + 75)
         setQuestions(additionalQuestions);
         setService(newSelected.title);
         setConcerns([]);
@@ -845,7 +852,7 @@ export default function Consultation() {
           .filter(question => question.active)
           .map((question, index) => (
             <React.Fragment key={index}>
-              <Grid item>
+              <Grid item ref={aRef}>
                 <Typography
                   align="center"
                   variant="h1"
