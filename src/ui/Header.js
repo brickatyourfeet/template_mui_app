@@ -39,8 +39,8 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')] : {
       //height: '5em'
-      width: '8em'
-    }
+      width: '15em'     //this will have to change with different sized logos
+    }                     //make sure to test on mobile
   },
   logoContainer: {
     //to get rid of default button padding
