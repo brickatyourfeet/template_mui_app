@@ -75,7 +75,15 @@ export default function Service1(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
+            <Typography 
+              align={matchesMD ? "center" : undefined} 
+              variant="h1"
+              style={{
+                lineHeight: matchesXS ? 1.1 : null, 
+                marginBottom: matchesXS ? "0.5em" : null,
+                fontSize: "2.25em"
+              }}
+            >
               Service 1
             </Typography>
           </Grid>
@@ -233,7 +241,7 @@ export default function Service1(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md>
+          <Grid item md style={{ marginBottom: matchesSM ? "2em" : null }}>
             <img src="/assets/herbs.svg" alt="tempSvg" />
           </Grid>
         </Grid>
@@ -244,7 +252,7 @@ export default function Service1(props) {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md>
+          <Grid item md style={{ marginTop: matchesSM ? "2em" : null }}>
             <img src="/assets/herbs.svg" alt="tempSvg" />
           </Grid>
           <Grid item container direction="column" md>
@@ -341,7 +349,7 @@ export default function Service1(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md>
+          <Grid item md style={{ marginBottom: matchesSM ? "2em" : null }}>
             <img src="/assets/herbs.svg" alt="tempSvg" />
           </Grid>
         </Grid>

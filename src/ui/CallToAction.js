@@ -119,12 +119,24 @@ export default function CallToAction(props) {
       >
         <Grid container direction="column">
           <Grid item>
-            <Typography variant="h1">
+            <Typography 
+              variant="h1"
+              style={{
+                lineHeight: matchesXS ? 1.1 : null, 
+                marginBottom: matchesXS ? "0.5em" : null,
+                fontSize: "2.25em"
+              }}
+            >
               CTA
               <br />
+              {matchesSM && <React.Fragment><br/> <p>smallllll test </p></React.Fragment>}
               Here it is
             </Typography>
-            <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }}>
+            <Typography 
+              variant="subtitle2" 
+              style={{ 
+                fontSize: matchesSM ? "1.24" : "1.5rem" 
+              }}>
               Some more words
             </Typography>
             <Grid container justifyContent={matchesSM ? "center" : undefined} item>

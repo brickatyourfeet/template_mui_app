@@ -86,6 +86,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: "12em",
     [theme.breakpoints.down("sm")]: {
       padding: 25
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: 6
     }
   },
   herbzBackground: {
@@ -220,7 +223,7 @@ export default function Landing(props) {
             </Typography>
             <Typography variant="subtitle1">
               Service 1 description{" "}
-              <span className={classes.specialText}>special text.</span>
+              <span className={classes.specialText}>special{matchesXS && <br/>} text.</span>
             </Typography>
             <Button
               component={Link}

@@ -80,7 +80,15 @@ export default function Service3(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
+            <Typography 
+              align={matchesMD ? "center" : undefined} 
+              variant="h1"
+              style={{
+                lineHeight: matchesXS ? 1.1 : null, 
+                marginBottom: matchesXS ? "0.5em" : null,
+                fontSize: "2.25em"
+              }}
+            >
               Service 3 title
             </Typography>
           </Grid>

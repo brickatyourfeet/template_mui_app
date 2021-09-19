@@ -30,6 +30,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: "10em",
     [theme.breakpoints.down("sm")]: {
       padding: 25
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: 6
     }
   },
   learnButton: {
@@ -47,6 +50,7 @@ export default function Services(props) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid container direction="column">
