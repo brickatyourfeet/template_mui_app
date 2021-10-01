@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {AppBar, Toolbar, useScrollTrigger, Hidden, Typography, SwipeableDrawer, Tabs, Tab, Button, Menu, MenuItem, useMediaQuery, IconButton, List, ListItem, ListItemText} from '@material-ui/core'
+import {AppBar, Toolbar, useScrollTrigger, Hidden, MenuList, Popper, Paper, Grow, ClickAwayListener, Typography, SwipeableDrawer, Tabs, Tab, Button, Menu, MenuItem, useMediaQuery, IconButton, List, ListItem, ListItemText} from '@material-ui/core'
 import { makeStyles, useTheme } from '@material-ui/styles'
 import Link from "../Link";
 import MenuIcon from '@material-ui/icons/Menu';
@@ -16,6 +16,13 @@ function ElevationScroll(props) {
   return React.cloneElement(children, {
     elevation: trigger ? 4 : 0,
   });
+}
+
+function handleListKeyDown(event) {
+  if (event.key === 'Tab') {
+    event.preventDefault();
+    setOpen(false);
+  }
 }
 
 const useStyles = makeStyles(theme => ({
@@ -74,6 +81,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.common.red,
     color: 'white',
     //borderRadius: '0px'  //can do this to make edges of menu sharp
+    zIndex: 1302, //based on mui default 
   },
   menuItem: {
     ...theme.typography.tab,
@@ -151,10 +159,10 @@ export default function Header(props){
   }
 
   const menuOptions = [
-    {name: 'Services', link: '/services', activeIndex: 1, selectedIndex: 0},
-    {name: 'service1', link: '/service1', activeIndex: 1, selectedIndex: 1},
-    {name: 'service2', link: '/service2', activeIndex: 1, selectedIndex: 2},
-    {name: 'service3', link: '/service3', activeIndex: 1, selectedIndex: 3},
+    //{name: 'Services', link: '/services', activeIndex: 1, selectedIndex: 0},  //this is redundant. 
+    {name: 'service1', link: '/service1', activeIndex: 1, selectedIndex: 0},
+    {name: 'service2', link: '/service2', activeIndex: 1, selectedIndex: 1},
+    {name: 'service3', link: '/service3', activeIndex: 1, selectedIndex: 2},
   ]
 
   const routes = [
@@ -209,6 +217,7 @@ export default function Header(props){
             aria-owns={route.ariaOwns}
             aria-haspopup={route.ariaPopup}
             onMouseOver={route.mouseOver}
+            onMouseLeave={()=> setMenuOpen(false)}
           />
         ))}
       </Tabs>
@@ -216,7 +225,45 @@ export default function Header(props){
       <Button component={Link} href='/consultation' onClick={() => props.setValue(5)} variant='contained' color='secondary' className={classes.button}>
       Schedule a Consultation?
       </Button>
-      <Menu 
+      <Popper placement='bottom-start' open={menuOpen} anchorEl={anchorEl} role={undefined} transition disablePortal>
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              style={{ 
+                //transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' 
+                transformOrigin: 'top left'
+              }}
+            >
+              <Paper classes={{root: classes.menu}} elevation={0}>
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList 
+                    onMouseLeave={handleClose} 
+                    disablePadding autoFocusItem={false} 
+                    id="simple-menu" 
+                    onKeyDown={handleListKeyDown}
+                    onMouseOver={()=> setMenuOpen(true)}
+                    >
+                  {menuOptions.map((option, index) => (
+                    <MenuItem 
+                      key={`${option}${index}`}
+                      component={Link} 
+                      href={option.link} 
+                      classes={{root: classes.menuItem}} 
+                      onClick={(event) => {
+                        handleMenuItemClick(event, index); props.setValue(1); handleClose()
+                      }}
+                      selected={index === props.selectedIndex && props.value === 1 && window.location.pathname !== '/services'}
+                    >
+                      {option.name}
+                    </MenuItem>
+                  ))}
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      {/* <Menu 
         id='simple-menu' 
         anchorEl={anchorEl} 
         open={menuOpen} 
@@ -227,21 +274,8 @@ export default function Header(props){
         keepMounted
         style={{zIndex: 1302}}
       >
-      {menuOptions.map((option, index) => (
-        <MenuItem 
-          key={`${option}${index}`}
-          component={Link} 
-          href={option.link} 
-          classes={{root: classes.menuItem}} 
-          onClick={(event) => {
-            handleMenuItemClick(event, index); props.setValue(1); handleClose()
-          }}
-          selected={index === props.selectedIndex && props.value === 1}
-        >
-          {option.name}
-        </MenuItem>
-      ))}
-      </Menu> 
+
+      </Menu>  */}
     </React.Fragment>
   )
 
