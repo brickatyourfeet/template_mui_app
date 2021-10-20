@@ -145,60 +145,7 @@ export default function Landing(props) {
     </Head>
       <Grid item>
         {" "}
-        {/*-----Hero-----*/}
-        <Grid container justifyContent="flex-end" alignItems="center" direction="row">
-          <Grid sm item className={classes.heroTextContainer}>
-            <Typography variant="h1" align="center">
-              Line 1 is longer than line 2 maybe?
-              <br />
-              Line 2
-            </Typography>
-            <Grid
-              container
-              justifyContent="center"
-              className={classes.buttonContainer}
-            >
-              <Grid item>
-                <Button
-                  component={Link}
-                  href="/consultation"
-                  className={classes.consultationButton}
-                  variant="contained"
-                  onClick={() => props.setValue(5)}  //5 will clear the highlight since there isn't a 5th
-                >
-                  Consultation
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button
-                  component={Link}
-                  href="/herbz"
-                  className={classes.learnButtonHero}
-                  variant="outlined"
-                  onClick={() => props.setValue(2)}
-                >
-                  <span style={{ marginRight: 10 }}>Learn More</span>
-                  <ButtonArrow
-                    width={15}
-                    height={15}
-                    fill={theme.palette.common.teal}
-                  />
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-        {/*-----
-          <Grid sm item className={classes.animation}>
-            <img
-              className={classes.icon}
-              alt="leaf 1 icon"
-              src="/assets/green-tea.svg"
-              height="100%"
-              width="100%"
-            />
-          </Grid>
-          -----*/}
-        </Grid>
+  
       </Grid>
       <Grid item>
         {" "}
