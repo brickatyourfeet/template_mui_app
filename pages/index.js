@@ -131,7 +131,12 @@ export default function Landing(props) {
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
-    <Grid container direction="column" className={classes.mainContainer}>
+    <Grid 
+      container 
+      direction="column" 
+      className={classes.mainContainer}
+      justifyContent={matchesSM ? "center" : undefined} 
+      >
     <Head>
       <title key="title">
         MAKE THIS TITLE TAG COUNT -- also the meta
@@ -145,7 +150,6 @@ export default function Landing(props) {
     </Head>
       <Grid item>
         {" "}
-  
       </Grid>
       <Grid item>
         {" "}
