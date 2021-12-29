@@ -167,7 +167,8 @@ export default function Header(props){
 
   const routes = [
     {name: "Home", link: '/', activeIndex: 0}, 
-    {name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
+    //{name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
+    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 1},
     {name: "Herbz", link: '/herbz', activeIndex: 2},
     {name: "About", link: '/about', activeIndex: 3},
     {name: "Contact", link: '/contact', activeIndex: 4},
