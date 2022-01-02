@@ -6,7 +6,10 @@ import ButtonArrow from "../src/ui/ButtonArrow";
 import Head from "next/head"
 import CallToAction from "../src/ui/CallToAction";
 
+//watch network tab to see images loading - this will help set the threshold 
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
+
+
 
 // import service1Icon from "../assets/tincture.svg";
 // import service2Icon from "../assets/tea-bag.svg";
@@ -116,6 +119,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   infoBackground: {
+    position: "absolute",
+    zIndex: -1,
     backgroundImage: `url("/assets/hexblur1.svg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -308,9 +313,9 @@ export default function Landing(props) {
       </Grid>
       <Grid item>
         {/*-----Herbz-----*/}
-        <Grid
+        <Grid         //the height and marginTop here may need adjusting based on bg image
           container
-          style={{ height: "100em", marginTop: "12em" }}
+          style={{ height: "100em", marginTop: "12em" }}  
           alignItems="center"
           justifyContent="center"
         >
@@ -350,19 +355,18 @@ export default function Landing(props) {
               </Grid>
             </CardContent>
           </Card>
-          <LazyLoadComponent>
+          <LazyLoadComponent threshold={850}>
             <div className={classes.herbzBackground} />
           </LazyLoadComponent>
         </Grid>
       </Grid>
       <Grid item>
         {/*-----Information Block-----*/}
-        <Grid
+        <Grid //the height and marginTop here may need adjusting based on bg image
           container
           style={{ height: "80em" }}
           alignItems="center"
           direction="row"
-          className={classes.infoBackground}
         >
           <Grid
             item
@@ -435,11 +439,20 @@ export default function Landing(props) {
               </Grid>
             </Grid>
           </Grid>
+          <LazyLoadComponent threshold={850}>
+            <div className={classes.infoBackground} />
+          </LazyLoadComponent>
         </Grid>
       </Grid>
       <Grid item>
         {/*-----CTA-----*/}
-        <CallToAction setValue={props.setValue} setBgImgNum={props.setBgImgNum} bgImg0000={props.bgImg0000}/>
+        <LazyLoadComponent threshold={850}>
+          <CallToAction 
+            setValue={props.setValue} 
+            setBgImgNum={props.setBgImgNum} 
+            bgImg0000={props.bgImg0000}
+          />
+        </LazyLoadComponent>
       </Grid>
     </Grid>
   );

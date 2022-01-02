@@ -7,6 +7,8 @@ import Theme from '../src/ui/Theme';
 import Header from '../src/ui/Header';
 import Footer from '../src/ui/Footer';
 
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
@@ -31,7 +33,9 @@ export default function MyApp(props) {
         {/* <CssBaseline /> */}
         <Header value={value} selectedIndex={selectedIndex} setValue={setValue} setSelectedIndex={setSelectedIndex} />
         <Component {...pageProps} setValue={setValue} setSelectedIndex={setSelectedIndex} />
-        <Footer setValue={setValue} setSelectedIndex={setSelectedIndex} />
+        <LazyLoadComponent threshold={550}>
+          <Footer setValue={setValue} setSelectedIndex={setSelectedIndex} />
+        </LazyLoadComponent>
       </ThemeProvider>
     </React.Fragment>
   );
