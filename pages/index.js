@@ -6,6 +6,8 @@ import ButtonArrow from "../src/ui/ButtonArrow";
 import Head from "next/head"
 import CallToAction from "../src/ui/CallToAction";
 
+import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
+
 // import service1Icon from "../assets/tincture.svg";
 // import service2Icon from "../assets/tea-bag.svg";
 // import service3Icon from "../assets/green-tea.svg";
@@ -13,7 +15,7 @@ import CallToAction from "../src/ui/CallToAction";
 // import infoBackground from "../assets/hexblur1.svg";
 
 const useStyles = makeStyles(theme => ({
-  animation: {   //can use lottie or a gif, or just an image/svg
+  animation: {   //can use lottie or a gif, or just an image/svg - or remove this class
     maxWidth: "50em",
     minWidth: "21em",
     marginTop: "2em",
@@ -195,7 +197,7 @@ export default function Landing(props) {
             </Button>
           </Grid>
           <Grid item> {/*-----1 grid item for image-----*/}
-            <img
+            <LazyLoadImage
               className={classes.icon}
               alt="service 1 icon"
               src="/assets/tincture.svg"
@@ -246,7 +248,7 @@ export default function Landing(props) {
             </Button>
           </Grid>
           <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
-            <img
+            <LazyLoadImage
               className={classes.icon}
               alt="service 2 icon"
               src="/assets/tea-bag.svg"
@@ -296,7 +298,7 @@ export default function Landing(props) {
             </Button>
           </Grid>
           <Grid item>
-            <img
+            <LazyLoadImage
               className={classes.icon}
               alt="service 3 icon"
               src="/assets/green-tea.svg"
@@ -348,7 +350,9 @@ export default function Landing(props) {
               </Grid>
             </CardContent>
           </Card>
-          <div className={classes.herbzBackground} />
+          <LazyLoadComponent>
+            <div className={classes.herbzBackground} />
+          </LazyLoadComponent>
         </Grid>
       </Grid>
       <Grid item>
