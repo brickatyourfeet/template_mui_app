@@ -167,12 +167,12 @@ export default function Header(props){
 
   const routes = [
     {name: "Home", link: '/', activeIndex: 0}, 
-    //{name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
-    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 1},
+    {name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
     {name: "Herbz", link: '/herbz', activeIndex: 2},
     {name: "About", link: '/about', activeIndex: 3},
     {name: "Contact", link: '/contact', activeIndex: 4},
-    {name: "Consultation", link: '/consultation', activeIndex: 5}, //adding this here gets rid of index error for 5
+    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 5},
+    //{name: "Consultation", link: '/consultation', activeIndex: 5}, //adding this here gets rid of index error for 5
   ]
 
   
@@ -219,6 +219,9 @@ export default function Header(props){
             aria-haspopup={route.ariaPopup}
             onMouseOver={route.mouseOver}
             onMouseLeave={()=> setMenuOpen(false)}
+            //onMouseLeave={()=> console.log(route)}
+            //target={index === 5 ? '_blank' : null}
+            target={route.name === 'Shop' ? '_blank' : null}
           />
         ))}
       </Tabs>
