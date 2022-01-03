@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {AppBar, Toolbar, useScrollTrigger, Hidden, MenuList, Popper, Paper, Grow, ClickAwayListener, Typography, SwipeableDrawer, Tabs, Tab, Button, Menu, MenuItem, useMediaQuery, IconButton, List, ListItem, ListItemText, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails} from '@material-ui/core'
+import Router from "next/router";
+import ReactGA from "react-ga";
+import {AppBar, Toolbar, useScrollTrigger, Hidden, MenuList, Popper, Paper, Grow, ClickAwayListener, Typography, SwipeableDrawer, Tabs, Tab, Button, Menu, MenuItem, useMediaQuery, IconButton, List, ListItem, ListItemText, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Accordion, AccordionDetails, AccordionSummary, Grid} from '@material-ui/core'
 import { makeStyles, useTheme } from '@material-ui/styles'
 import Link from "../Link";
+import {ExpandMore} from '@material-ui/icons';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
@@ -121,13 +124,36 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     zIndex: theme.zIndex.modal + 1,
 
+  },
+  expansion: {
+    backgroundColor: theme.palette.common.teal,
+    borderBottom: "1px solid rgba(0, 0, 0, 0.12)", //to match the main menu items
+    "&.Mui-expanded": {
+      margin: 0,
+      borderBottom: 0
+    },
+    "&::before": {
+      backgroundColor: "rgba(0, 0, 0, 0)"
+    }
+  },
+  expansionDetails: {
+    padding: 0, //can get rid of this to indent inner menu items
+    backgroundColor: theme.palette.primary.light
+  },
+  expansionSummary: {
+    padding: "0 24px 0 16px",
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 0.08)"
+    },
+    backgroundColor: props =>
+      props.value === 1 ? "rgba(0, 0, 0, 0.14)" : "inherit"
   }
 
 }))
 
 export default function Header(props){
 
-  const classes = useStyles()
+  const classes = useStyles(props)   //so we can use props in the styles above 
   const theme = useTheme()
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
   const matches = useMediaQuery(theme.breakpoints.down('md'))
@@ -136,6 +162,8 @@ export default function Header(props){
 
   const [anchorEl, setAnchorEl] = useState(null)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const [previousURL, setPreviousURL] = useState("");
 
 
   const handleChange = (e, newValue) => {
@@ -159,7 +187,7 @@ export default function Header(props){
   }
 
   const menuOptions = [
-    //{name: 'Services', link: '/services', activeIndex: 1, selectedIndex: 0},  //this is redundant. 
+    //{name: 'services', link: '/services', activeIndex: 1, selectedIndex: 0},  //check this again
     {name: 'service1', link: '/service1', activeIndex: 1, selectedIndex: 0},
     {name: 'service2', link: '/service2', activeIndex: 1, selectedIndex: 1},
     {name: 'service3', link: '/service3', activeIndex: 1, selectedIndex: 2},
@@ -171,33 +199,30 @@ export default function Header(props){
     {name: "Herbz", link: '/herbz', activeIndex: 2},
     {name: "About", link: '/about', activeIndex: 3},
     {name: "Contact", link: '/contact', activeIndex: 4},
-    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 5},
+    //{name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 5},
     //{name: "Consultation", link: '/consultation', activeIndex: 5}, //adding this here gets rid of index error for 5
   ]
 
-  
+  const path = typeof window !== 'undefined' ? window.location.pathname : null
+
+  const activeIndex = () => {
+    const found = routes.find(({link}) => link === path)
+    const menuFound = menuOptions.find(({link}) => link === path)
+
+    if(menuFound){
+      props.setValue(1)
+      props.setSelectedIndex(menuFound.selectedIndex)
+    } else if(found === undefined){
+      props.setValue(false)
+    } else {
+      props.setValue(found.activeIndex)
+    }
+  }
 
   useEffect(() => {
-    [...menuOptions, ...routes].forEach(route => {
-      switch(window.location.pathname){
-        case `${route.link}`:
-          if(props.value !== route.activeIndex){
-            props.setValue(route.activeIndex)
-            if(route.selectedIndex && route.selectedIndex !== props.selectedIndex){
-              props.setSelectedIndex(route.selectedIndex)
-            }
-          }
-          break;
-        case '/consultation': {
-          if(props.value !== 5) props.setValue(5)
-          break;
-        }
-        default:
-          break;
-      }
-    })
-  }, [props.value, menuOptions, props.selectedIndex, routes, props])
-
+    activeIndex()
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [path])
 
   const tabs = (
     <React.Fragment>
@@ -295,7 +320,46 @@ export default function Header(props){
       >
        <div className={classes.headerMargin} />
        <List disablePadding>
-        {routes.map(route => (
+        {routes.map(route => route === 'Services' ? (
+          <ExpansionPanel>
+            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+              {route.name}
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails classes={{ root: classes.expansionDetails }}> {/** overwriting mui class */} 
+            <Grid container direction="column">
+                    {menuOptions.map(route => (
+                      <Grid item>
+                        <ListItem
+                          divider
+                          key={`${route}${route.seleselectedIndex}`}
+                          button
+                          component={Link}
+                          href={route.link}
+                          selected={
+                            props.selectedIndex === route.selectedIndex &&
+                            props.value === 1 &&
+                            window.location.pathname !== "/services"
+                          }
+                          classes={{ selected: classes.drawerItemSelected }}
+                          onClick={() => {
+                            setDrawerOpen(false);
+                            props.setSelectedIndex(route.selectedIndex);
+                          }}
+                        >
+                          <ListItemText
+                            className={classes.drawerItem}
+                            disableTypography
+                          >
+                            {route.name}
+                          </ListItemText>
+                        </ListItem>
+                      </Grid>
+                    ))}
+                  </Grid>
+            </ExpansionPanelDetails>
+
+          </ExpansionPanel>
+        ) : (
           <ListItem 
             key={`${route}${route.activeIndex}`}
             divider 
@@ -321,8 +385,7 @@ export default function Header(props){
       </SwipeableDrawer>
        
       <IconButton className={classes.drawerIconContainer} onClick={()=> setDrawerOpen(!drawerOpen)}>
-        <MenuIcon className={classes.drawerIcon}>
-        </MenuIcon>
+        <MenuIcon className={classes.drawerIcon}></MenuIcon>
       </IconButton>
     </React.Fragment>
   )

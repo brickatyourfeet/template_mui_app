@@ -21,6 +21,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
     "react-juicer-feed": "0.0.2-alpha-4",
     "react-lazy-load-image-component": "^1.5.1",
     "react-router-dom": "^5.2.0",
@@ -32,5 +33,8 @@
     "start": "next start",
     "postbuild": "node scripts/sitemap.js",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }
