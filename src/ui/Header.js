@@ -44,6 +44,9 @@ const useStyles = makeStyles(theme => ({
     height: "9em",
     marginTop: "0.3em",
     //marginBottom: "-1em",
+    [theme.breakpoints.down('lg')] : {
+      height: '8.1em'
+    },
     [theme.breakpoints.down('md')] : {
       height: '6em'
     },
@@ -156,7 +159,7 @@ export default function Header(props){
   const classes = useStyles(props)   //so we can use props in the styles above 
   const theme = useTheme()
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
-  const matches = useMediaQuery(theme.breakpoints.down('md'))
+  const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
 
   const [drawerOpen, setDrawerOpen] = useState(false)
 
@@ -199,7 +202,7 @@ export default function Header(props){
     {name: "Herbz", link: '/herbz', activeIndex: 2},
     {name: "About", link: '/about', activeIndex: 3},
     {name: "Contact", link: '/contact', activeIndex: 4},
-    //{name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 5},
+    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 5},
     //{name: "Consultation", link: '/consultation', activeIndex: 5}, //adding this here gets rid of index error for 5
   ]
 
@@ -247,13 +250,14 @@ export default function Header(props){
             //onMouseLeave={()=> console.log(route)}
             //target={index === 5 ? '_blank' : null}
             target={route.name === 'Shop' ? '_blank' : null}
+            disabled={false}
           />
         ))}
       </Tabs>
       
-      <Button component={Link} href='/consultation' onClick={() => props.setValue(5)} variant='contained' color='secondary' className={classes.button}>
+      {/* <Button component={Link} href='/consultation' onClick={() => props.setValue(5)} variant='contained' color='secondary' className={classes.button}>
       Schedule a Consultation?
-      </Button>
+      </Button> */}
       <Popper placement='bottom-start' open={menuOpen} anchorEl={anchorEl} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
@@ -282,6 +286,7 @@ export default function Header(props){
                         handleMenuItemClick(event, index); props.setValue(1); handleClose()
                       }}
                       selected={index === props.selectedIndex && props.value === 1 && window.location.pathname !== '/services'}
+                      //can remove above once services is removed
                     >
                       {option.name}
                     </MenuItem>
@@ -378,9 +383,9 @@ export default function Header(props){
             </ListItemText>
           </ListItem>
         ))}
-        <ListItem selected={props.value===5} classes={{root: classes.drawerItemConsultation, selected: classes.drawerItemSelected}} onClick={()=> {setDrawerOpen(false); props.setValue(5)}} divider button component={Link} href='/consultation'>
+        {/* <ListItem selected={props.value===5} classes={{root: classes.drawerItemConsultation, selected: classes.drawerItemSelected}} onClick={()=> {setDrawerOpen(false); props.setValue(5)}} divider button component={Link} href='/consultation'>
           <ListItemText className={classes.drawerItem} disableTypography>Schedule Consultation</ListItemText>
-        </ListItem>
+        </ListItem> */}
        </List>
       </SwipeableDrawer>
        
@@ -419,7 +424,8 @@ export default function Header(props){
 </svg>
              */}
           </Button>
-          <Hidden mdDown>
+          {/* yooooooooooooo */}
+          <Hidden mdDown> 
             {tabs}
           </Hidden>
           <Hidden lgUp>
