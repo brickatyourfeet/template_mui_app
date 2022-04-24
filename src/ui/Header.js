@@ -69,7 +69,8 @@ const useStyles = makeStyles(theme => ({
   tab: {
     ...theme.typography.tab,
      minWidth: 10,
-     marginLeft: '25px'
+     marginLeft: '25px',
+     textColor: 'black' //this doesnt change header tab text
   },
   button: {
     ...theme.typography.consultation,
@@ -85,16 +86,17 @@ const useStyles = makeStyles(theme => ({
   },
   menu: {
     backgroundColor: theme.palette.common.red,
-    color: 'white',
+    color: 'white',  //the 3 white lines of the hamburger menu icon
     //borderRadius: '0px'  //can do this to make edges of menu sharp
     zIndex: 1302, //based on mui default 
   },
   menuItem: {
     ...theme.typography.tab,
+    textColor: 'black', //not header tab item
     opacity: 0.7,
     '&:hover': {
       opacity: 1,
-      // backgroundColor: 'white'
+      //backgroundColor: 'white' //background of service menu list items on hove
     }
   },
   drawer: {
@@ -103,7 +105,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerItem: {
     ...theme.typography.tab,
-    color: 'white',
+    color: 'white',  //the text color of drawer
     opacity: 0.7
   },
   drawerItemSelected: {
@@ -126,7 +128,8 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     zIndex: theme.zIndex.modal + 1,
-
+    //color: 'black' //this IS the header item text color
+    color: 'white'
   },
   expansion: {
     backgroundColor: theme.palette.common.teal,
@@ -198,11 +201,11 @@ export default function Header(props){
 
   const routes = [
     {name: "Home", link: '/', activeIndex: 0}, 
-    {name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
-    {name: "Herbz", link: '/herbz', activeIndex: 2},
-    {name: "About", link: '/about', activeIndex: 3},
-    {name: "Contact", link: '/contact', activeIndex: 4},
-    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 5},
+    //{name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
+    {name: "Herbz", link: '/herbz', activeIndex: 1},
+    {name: "About", link: '/about', activeIndex: 2},
+    {name: "Contact", link: '/contact', activeIndex: 3},
+    {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 4},
     //{name: "Consultation", link: '/consultation', activeIndex: 5}, //adding this here gets rid of index error for 5
   ]
 
@@ -336,7 +339,7 @@ export default function Header(props){
                       <Grid item>
                         <ListItem
                           divider
-                          key={`${route}${route.seleselectedIndex}`}
+                          key={`${route}${route.selectedIndex}`}
                           button
                           component={Link}
                           href={route.link}
@@ -354,8 +357,10 @@ export default function Header(props){
                           <ListItemText
                             className={classes.drawerItem}
                             disableTypography
+                            color='green' 
                           >
                             {route.name}
+                            whattttt oijsdfoij
                           </ListItemText>
                         </ListItem>
                       </Grid>

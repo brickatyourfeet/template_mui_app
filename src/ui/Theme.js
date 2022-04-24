@@ -22,10 +22,11 @@ export default createTheme({
   typography: {  //will change sizes and weights as we change fonts
     tab: {
       fontFamily: 'Ubuntu Condensed',
+      //textColor: 'black', //this doesnt change tabs text color
       //can set textTransform to none to keep all tabs default case, remove for all uppercase
       textTransform: 'none',
-       fontWeight: '700',
-       fontSize: '1rem',
+      fontWeight: '700',
+      fontSize: '1rem',
     },
     consultation: {
       fontFamily: 'Ubuntu Condensed',

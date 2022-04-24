@@ -106,6 +106,7 @@ const useStyles = makeStyles(theme => ({
   },
   herbzCard: {
     position: "absolute",
+    justifyContent: "flex-start",
     boxShadow: theme.shadows[10],
     borderRadius: 15,
     padding: "10em",
@@ -156,215 +157,10 @@ export default function Landing(props) {
       <meta property="og:url" key="og:url" content="rainierelixirs.com" />
     </Head>
       <Grid item>
-        {" "}
-      </Grid>
-      <Grid item>
-        {" "}
-        {/*-----Service 1-----*/}
-        {/*--grid container on left, center when small--*/}
-        <Grid
-          container
-          direction="row" 
-          justifyContent={matchesSM ? "center" : undefined} 
-          className={classes.serviceContainer}
-        >
-          <Grid
-            item
-            style={{
-              marginLeft: matchesSM ? 0 : "5em",
-              textAlign: matchesSM ? "center" : undefined
-            }}
-          >         {/*-----1 grid item for text-----*/}
-            <Typography variant="h4">Service 1</Typography>
-            <Typography variant="subtitle1" className={classes.subtitle}>
-              Service 1
-            </Typography>
-            <Typography variant="subtitle1">
-              Service 1 description{" "}
-              <span className={classes.specialText}>special{matchesXS && <br/>} text.</span>
-            </Typography>
-            <Button
-              component={Link}
-              href="/service1"
-              variant="outlined"
-              className={classes.learnButton}
-              onClick={() => {
-                props.setValue(1);         //setValue in the navbar
-                props.setSelectedIndex(1); //selected index for the dropdown as well
-              }}
-            >
-              <span style={{ marginRight: 10 }}>Learn More</span>
-              <ButtonArrow
-                width={10}
-                height={10}
-                fill={theme.palette.common.teal}
-              />
-            </Button>
-          </Grid>
-          <Grid item> {/*-----1 grid item for image-----*/}
-            <LazyLoadImage
-              className={classes.icon}
-              alt="service 1 icon"
-              src="/assets/tincture.svg"
-            />
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item>
-        {" "}
-        {/*-----Service 2-----*/}
-        {/*--grid container on right (flex-end), center when small--*/}
-        <Grid
-          container
-          direction="row"
-          justifyContent={matchesSM ? "center" : "flex-end"}
-          className={classes.serviceContainer}
-        >
-          <Grid
-            item
-            style={{
-              textAlign: matchesSM ? "center" : undefined
-            }}
-          >
-            <Typography variant="h4">Service 2</Typography>
-            <Typography variant="subtitle1" className={classes.subtitle}>
-              Service 2 description
-            </Typography>
-            <Typography variant="subtitle1">
-              Service 2 part 2 desc
-              {matchesSM ? null : <br />}with a break if necessary.
-            </Typography>
-            <Button
-              component={Link}
-              href="/service2"
-              variant="outlined"
-              className={classes.learnButton}
-              onClick={() => {
-                props.setValue(1);
-                props.setSelectedIndex(2);
-              }}
-            >
-              <span style={{ marginRight: 10 }}>Learn More</span>
-              <ButtonArrow
-                width={10}
-                height={10}
-                fill={theme.palette.common.teal}
-              />
-            </Button>
-          </Grid>
-          <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
-            <LazyLoadImage
-              className={classes.icon}
-              alt="service 2 icon"
-              src="/assets/tea-bag.svg"
-            />
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item>
-        {" "}
-        {/*-----Service 3-----*/}
-        <Grid
-          container
-          direction="row"
-          justifyContent={matchesSM ? "center" : undefined}
-          className={classes.serviceContainer}
-        >
-          <Grid
-            item
-            style={{
-              marginLeft: matchesSM ? 0 : "5em",
-              textAlign: matchesSM ? "center" : undefined
-            }}
-          >
-            <Typography variant="h4">Service 3</Typography>
-            <Typography variant="subtitle1" className={classes.subtitle}>
-              Service 3 descript
-            </Typography>
-            <Typography variant="subtitle1">
-              service 3 description 2
-            </Typography>
-            <Button
-              component={Link}
-              href="/service3"
-              variant="outlined"
-              className={classes.learnButton}
-              onClick={() => {
-                props.setValue(1);
-                props.setSelectedIndex(3);
-              }}
-            >
-              <span style={{ marginRight: 10 }}>Learn More</span>
-              <ButtonArrow
-                width={10}
-                height={10}
-                fill={theme.palette.common.teal}
-              />
-            </Button>
-          </Grid>
-          <Grid item>
-            <LazyLoadImage
-              className={classes.icon}
-              alt="service 3 icon"
-              src="/assets/green-tea.svg"
-            />
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item>
-        {/*-----Herbz-----*/}
-        <Grid         //the height and marginTop here may need adjusting based on bg image
-          container
-          style={{ height: "100em", marginTop: "12em" }}  
-          alignItems="center"
-          justifyContent="center"
-        >
-          {/*-----Card content is the top portion, actions is the buttons etc-----*/}
-          <Card className={classes.herbzCard}>
-          {/*--https://material-ui.com/components/cards/--*/}
-            <CardContent>
-              <Grid
-                container
-                direction="column"
-                style={{ textAlign: "center" }}
-              >
-                <Grid item>
-                  <Typography variant="h3" gutterBottom>
-                    Herbz
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1">
-                    Herbz descript 1
-                  </Typography>
-                  <Button
-                    component={Link}
-                    href="/herbz"
-                    className={classes.learnButtonHero}
-                    variant="outlined"
-                    onClick={() => props.setValue(2)}
-                  >
-                    <span style={{ marginRight: 10 }}>Learn More</span>
-                    <ButtonArrow
-                      width={15}
-                      height={15}
-                      fill={theme.palette.common.teal}
-                    />
-                  </Button>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-          <LazyLoadComponent threshold={850}>
-            <div className={classes.herbzBackground} />
-          </LazyLoadComponent>
-        </Grid>
-      </Grid>
-      <Grid item>
-        {/*-----Information Block-----*/}
+        {/*-----ABOUT Block-----*/}
         <Grid //the height and marginTop here may need adjusting based on bg image
           container
-          style={{ height: "80em" }}
+          style={{ height: "20em" }}
           alignItems="center"
           direction="row"
         >
@@ -441,6 +237,55 @@ export default function Landing(props) {
           </Grid>
           <LazyLoadComponent threshold={850}>
             <div className={classes.infoBackground} />
+          </LazyLoadComponent>
+        </Grid>
+      </Grid>
+      <Grid item>
+        {/*-----Herbz-----*/}
+        <Grid         //the height and marginTop here may need adjusting based on bg image
+          container
+          style={{ height: "100em", marginTop: "0em" }}  
+          alignItems="center"
+          justifyContent="center"
+        >
+          {/*-----Card content is the top portion, actions is the buttons etc-----*/}
+          <Card className={classes.herbzCard}>
+          {/*--https://material-ui.com/components/cards/--*/}
+            <CardContent>
+              <Grid
+                container
+                direction="column"
+                style={{ textAlign: "center" }}
+              >
+                <Grid item>
+                  <Typography variant="h3" gutterBottom>
+                    Herbz
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1">
+                    Herbz descript 1
+                  </Typography>
+                  <Button
+                    component={Link}
+                    href="/herbz"
+                    className={classes.learnButtonHero}
+                    variant="outlined"
+                    onClick={() => props.setValue(2)}
+                  >
+                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <ButtonArrow
+                      width={15}
+                      height={15}
+                      fill={theme.palette.common.teal}
+                    />
+                  </Button>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+          <LazyLoadComponent threshold={850}>
+            <div className={classes.herbzBackground} />
           </LazyLoadComponent>
         </Grid>
       </Grid>
