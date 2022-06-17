@@ -238,7 +238,7 @@ export default function Header(props){
       onChange={handleChange} 
       className={classes.tabContainer}
       //can set indicator color to primary to get rid of underline
-      // indicatorColor="primary" 
+      indicatorColor="white" 
       >
         {routes.map((route, index) => (
           <Tab 
@@ -404,7 +404,7 @@ export default function Header(props){
   return (
     <React.Fragment>
       <ElevationScroll>
-        <AppBar position="fixed" color="primary" className={classes.appBar}>
+        <AppBar position="fixed" color="white" className={classes.appBar}>
           <Toolbar>
           <Button 
             component={Link} 
