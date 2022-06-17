@@ -85,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     // textTransform: 'none'
   },
   menu: {
-    backgroundColor: theme.palette.common.red,
+    backgroundColor: 'white',
     color: 'white',  //the 3 white lines of the hamburger menu icon
     //borderRadius: '0px'  //can do this to make edges of menu sharp
     zIndex: 1302, //based on mui default 
@@ -129,7 +129,8 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     zIndex: theme.zIndex.modal + 1,
     //color: 'black' //this IS the header item text color
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'black'
   },
   expansion: {
     backgroundColor: theme.palette.common.teal,

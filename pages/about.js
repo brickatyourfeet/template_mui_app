@@ -78,7 +78,11 @@ export default function About(props) {
           align="center"
           className={classes.missionStatement}
         >
-          Describe about Lorem  Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quis pariatur quidem assumenda ab molestias, amet eum expedita quas blanditiis accusamus, voluptatum saepe natus ullam! At placeat nisi consequatur quas!
+          Our mission is to create herbal medicines that are not only effective and affordable, but are the highest possible quality. We support this idea by hand-harvesting almost all of the herbs that we use in our blends from the wild forests of the Pacific Northwest, and by utilizing over 15 years of knowledge and experience in herbalism to create the most effective blends possible. 
+Why are small batches better? Small batches mean that we control exactly what goes into each blend, and are able to produce them using the most effective methods. This means higher quality herbs & solvents (wild & live), longer macerating times (up to a year), and the ability to use cold press extraction (which squeezes out every last drop of herbal gold). 
+Why we use live plants? When plants are dried, they lose many of their nutrients and all of their vitality as a result. Furthermore, the longer a plant remains dried before it is used as medicine, the more nutrients it will lose. Using live plants allows the extraction of almost all of the plant?s nutrients and vital energy into the solution & can be seen as an encapsulation of the entire plant. 
+Why wild? Wild plants in their natural habitat are able to absorb their desired nutrients from their surroundings as nature intended, creating a well-rounded herb with the highest amount of nutrients possible. Farmed plants - while they have their place in herbalism when wild plants are unavailable - lack most of their natural food sources found in their wild habitat, and therefore are lacking in nutrients compared to their wild counterparts. 
+Every drop is chock-full of vital plant nutrients and energy to elicit deep healing and nourishment.
         </Typography>
       </Grid>
       <Grid
@@ -128,7 +132,7 @@ export default function About(props) {
                 align={matchesMD ? "center" : undefined}
                 paragraph
               >
-                More descript Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis repellat deserunt repudiandae sed, recusandae dicta fugit doloribus tempora ratione? Maxime beatae explicabo consequuntur omnis facilis assumenda molestias deserunt accusantium?
+                this could be something about the store with a tincture on the side?? 
               </Typography>
               <Typography
                 variant="body1"
@@ -193,7 +197,11 @@ export default function About(props) {
           <Hidden lgUp> {/** hidden on large screens **/}
             <Grid item lg style={{ maxWidth: "45em", padding: "1.25em" }}>
               <Typography variant="body1" align="center" paragraph>
-                LG Up About Jewell Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum quidem esse expedita, quas harum omnis delectus hic velit quaerat placeat, aperiam voluptates minima aut. Autem consequatur incidunt quibusdam? Veniam.
+              Hi! I?m Jewell, the owner & herbalist behind Rainier Elixirs. I've been studying herbalism for over 15 years and enjoy wildcrafting the freshest & healthiest herbs to offer in our blends.
+
+Since 2007, I?ve completed herbal courses with Jane Bothwell, Rosemary Gladstar, and Michael & Leslie Tierra, as well as studied with Lynda Emashowski in the ways of native & folk herbalism. I also hold a Bachelor of Science in Alternative Medicine.
+
+I live in the Pacific Northwest with my husband & two kids, and we are lucky enough to be surrounded by lush, bountiful forests in the mountains, lowlands & coastlines of our region. Outings & vacations most often include lots of wild herb hunting!
               </Typography>
               <Typography variant="body1" align="center" paragraph>
                 Lg Up Short blurb maybe if you want that
@@ -224,7 +232,11 @@ export default function About(props) {
           <Hidden mdDown> {/** hidden on medium and down screens **/}
             <Grid item lg style={{ maxWidth: "45em", padding: "1.25em" }}>
               <Typography variant="body1" align="center" paragraph>
-                MD Down About Jewell Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum quidem esse expedita, quas harum omnis delectus hic velit quaerat placeat, aperiam voluptates minima aut. Autem consequatur incidunt quibusdam? Veniam.
+              Hi! I'm Jewell, the owner & herbalist behind Rainier Elixirs. I've been studying herbalism for over 15 years and enjoy wildcrafting the freshest & healthiest herbs to offer in our blends.
+
+Since 2007, I?ve completed herbal courses with Jane Bothwell, Rosemary Gladstar, and Michael & Leslie Tierra, as well as studied with Lynda Emashowski in the ways of native & folk herbalism. I also hold a Bachelor of Science in Alternative Medicine.
+
+I live in the Pacific Northwest with my husband & two kids, and we are lucky enough to be surrounded by lush, bountiful forests in the mountains, lowlands & coastlines of our region. Outings & vacations most often include lots of wild herb hunting!
               </Typography>
               <Typography variant="body1" align="center" paragraph>
                 MD Down Short blurb maybe if you want that

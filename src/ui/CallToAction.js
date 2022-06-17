@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {Typography, Button, useMediaQuery, Grid} from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { alpha } from '@material-ui/core/styles/colorManipulator';
 import ButtonArrow from "./ButtonArrow";
 import {useLocation} from "react-router-dom";
 import Link from "../Link";
@@ -60,7 +61,7 @@ const useStyles = makeStyles(theme => ({
     }
   },                                        
   background: {                            
-    //backgroundImage: `url(${background0})`
+    backgroundImage: `url("/assets/ctabg2.jpg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
@@ -77,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 50,
     height: 80,
     width: 205,
-    backgroundColor: theme.palette.common.red,
+    backgroundColor: "white",
     fontSize: "1.5rem",
     marginRight: "5em",
     marginLeft: "2em",
@@ -88,6 +89,12 @@ const useStyles = makeStyles(theme => ({
       marginLeft: 0,
       marginRight: 0
     }
+  },
+  ctaBlurb: {
+    backgroundColor: alpha(theme.palette.common.red, 0.4),
+    borderRadius: 20,
+    height: 350,
+    width: 450,
   }
 }));
 
@@ -124,7 +131,9 @@ export default function CallToAction(props) {
               style={{
                 lineHeight: matchesXS ? 1.1 : null, 
                 marginBottom: matchesXS ? "0.5em" : null,
-                fontSize: "2.25em"
+                fontSize: "2.25em",
+                color: "white",
+                textShadow: "2px 2px black"
               }}
             >
               CTA
@@ -135,7 +144,8 @@ export default function CallToAction(props) {
             <Typography 
               variant="subtitle2" 
               style={{ 
-                fontSize: matchesSM ? "1.24" : "1.5rem" 
+                fontSize: matchesSM ? "1.24" : "1.5rem",
+                textShadow: "2px 2px black"
               }}>
               Some more words
             </Typography>
@@ -161,12 +171,12 @@ export default function CallToAction(props) {
       <Grid item>
         <Button
           component={Link}
-          href="/consultation"
+          href="/contact"
           variant="contained"
           className={classes.consultationButton}
           onClick={() => props.setValue(5)}
         >
-          Consultation
+          Contact
         </Button>
       </Grid>
     </Grid>

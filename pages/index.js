@@ -18,15 +18,6 @@ import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-componen
 // import infoBackground from "../assets/hexblur1.svg";
 
 const useStyles = makeStyles(theme => ({
-  animation: {   //can use lottie or a gif, or just an image/svg - or remove this class
-    maxWidth: "50em",
-    minWidth: "21em",
-    marginTop: "2em",
-    marginLeft: "10%",
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "30em"
-    }
-  },
   consultationButton: {
     ...theme.typography.consultation,
     backgroundColor: theme.palette.common.red,
@@ -102,7 +93,8 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     height: "100%",
-    width: "100%"
+    width: "100%",
+    //opacity: 0.1
   },
   herbzCard: {
     position: "absolute",
@@ -182,10 +174,14 @@ export default function Landing(props) {
                 style={{ marginBottom: matchesXS ? "10em" : 0 }}
                 direction="column"
               >
-                <Typography variant="h1" style={{ color: "black" }}>
-                  About
+                <Typography variant="h1" style={{ color: "black", textShadow: "2px 2px white" }}>
+                  Highly potent, small batch, wild & live herbal products made in the Pacific Northwest
                 </Typography>
-                <Typography style={{ color: "black", borderColor: "black" }} variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, consequatur. Quis ratione provident quos, recusandae assumenda vel ipsum reprehenderit error rerum eum officiis. Incidunt explicabo impedit dolorum alias iusto? Culpa.</Typography>
+
+                <Typography style={{ color: "black", borderColor: "black" }} variant="subtitle2">
+                
+                </Typography>
+                
                 <Grid item>
                   <Button
                     component={Link}

@@ -58,6 +58,7 @@ const useStyles = makeStyles(theme => ({
     height: 45,
     width: 245,
     fontSize: "1rem",
+    textShadow: `2px solid ${theme.palette.common.teal}`,
     backgroundColor: theme.palette.common.red,
     "&:hover": {
       backgroundColor: theme.palette.secondary.light
@@ -446,7 +447,12 @@ export default function Contact(props) {
         > 
           <Grid container direction="column">
             <Grid item>
-              <Typography align={matchesMD ? "center" : undefined} variant="h1">
+              <Typography 
+                align={matchesMD ? "center" : undefined} 
+                variant="h1"
+                style={{textShadow: "2px 2px black"}}
+                color='white'
+                >
                 Rainier
                 <br />
                 Elixirs
@@ -477,7 +483,7 @@ export default function Contact(props) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        {/* <Grid item>
           <Button
             component={Link}
             href="/consultation"
@@ -487,7 +493,7 @@ export default function Contact(props) {
           >
             Consultation
           </Button>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Grid>
   );

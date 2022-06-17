@@ -6,13 +6,14 @@ import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    backgroundColor: theme.palette.common.teal,
+    backgroundColor: "black",
     width: "100%",
     zIndex: 1302,
     position: "relative"
   },
   adornment: {
-    width: "25em",
+    width: "35em",
+    height: "8em",
     verticalAlign: "bottom",
     [theme.breakpoints.down("md")]: {
       width: "21em"
@@ -86,7 +87,7 @@ export default function Footer(props) {
               >
                 Services
               </Grid>
-              <Grid
+              {/* <Grid
                 item
                 component={Link}
                 href="/service1"
@@ -121,7 +122,7 @@ export default function Footer(props) {
                 className={classes.link}
               >
                 Service 3
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
           <Grid item className={classes.gridItem}>
@@ -134,17 +135,8 @@ export default function Footer(props) {
                 onClick={() => props.setValue(2)}
               >
                 Herbz?
-              </Grid>
-              <Grid
-                item
-                component={Link}
-                href="/herbz"
-                className={classes.link}
-                onClick={() => props.setValue(2)}
-              >
-                herbz1
-              </Grid>
-              <Grid
+              </Grid> 
+              {/* <Grid
                 item
                 component={Link}
                 href="/herbz"
@@ -161,7 +153,7 @@ export default function Footer(props) {
                 onClick={() => props.setValue(2)}
               >
                 herbz3
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
           <Grid item className={classes.gridItem}>
@@ -175,7 +167,7 @@ export default function Footer(props) {
               >
                 About
               </Grid>
-              <Grid
+              {/* <Grid
                 item
                 component={Link}
                 onClick={() => props.setValue(3)}
@@ -192,7 +184,7 @@ export default function Footer(props) {
                 className={classes.link}
               >
                 About 3?
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
           <Grid item className={classes.gridItem}>

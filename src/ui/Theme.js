@@ -38,7 +38,7 @@ export default createTheme({
       fontFamily: "Helvetica Neue",
       fontWeight: 700,
       fontSize: "2.5rem",
-      color: customGrey,
+      color: "white",
       lineHeight: 1.5
     },
     h3: {
