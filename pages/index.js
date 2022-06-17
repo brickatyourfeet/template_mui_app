@@ -206,10 +206,10 @@ export default function Landing(props) {
               }}
             >
               <Grid container direction="column">
-                <Typography variant="h1" style={{ color: "white" }}>
+                <Typography variant="h1" style={{color: "white", textShadow: "2px 2px black"}}>
                   Contact
                 </Typography>
-                <Typography variant="subtitle2">
+                <Typography variant="subtitle2" style={{color: "white", textShadow: "2px 2px black"}}>
                   Say hiya buddy!{" "}
                   <span role="img" aria-label="waving hand">
                     👋🏻
