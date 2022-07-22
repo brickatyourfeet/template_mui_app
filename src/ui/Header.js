@@ -85,14 +85,15 @@ const useStyles = makeStyles(theme => ({
     // textTransform: 'none'
   },
   menu: {
-    backgroundColor: 'white',
-    color: 'white',  //the 3 white lines of the hamburger menu icon
+    zIndex: 5, //this is nonsense
+    backgroundColor: 'white',   /////ffffiiiix this
+    color: '#ff4400',  //the 3 white lines of the hamburger menu icon
     //borderRadius: '0px'  //can do this to make edges of menu sharp
     zIndex: 1302, //based on mui default 
   },
   menuItem: {
     ...theme.typography.tab,
-    textColor: 'black', //not header tab item
+    textColor: 'black', //not header tab item - what is this?
     opacity: 0.7,
     '&:hover': {
       opacity: 1,
@@ -129,7 +130,7 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     zIndex: theme.zIndex.modal + 1,
     //color: 'black' //this IS the header item text color
-    color: 'white',
+    color: 'white', //************ change this to kill white error -- use mui colors*/
     backgroundColor: 'black'
   },
   expansion: {
@@ -203,7 +204,7 @@ export default function Header(props){
   const routes = [
     {name: "Home", link: '/', activeIndex: 0}, 
     //{name: "Services", link: '/services', activeIndex: 1, ariaOwns: anchorEl ? 'simple-menu' : undefined, ariaPopup: anchorEl ? true : undefined, mouseOver: event => handleClick(event)},
-    {name: "Herbz", link: '/herbz', activeIndex: 1},
+    {name: "Photos", link: '/herbz', activeIndex: 1},
     {name: "About", link: '/about', activeIndex: 2},
     {name: "Contact", link: '/contact', activeIndex: 3},
     {name: "Shop", link: 'https://rainierelixirs.etsy.com', activeIndex: 4},

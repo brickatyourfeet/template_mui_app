@@ -38,6 +38,8 @@ const useStyles = makeStyles(theme => ({
   icon: {  //will restructure this based on how many icons
     height: "4em",
     width: "4em",
+    filter: "grayscale(100%)",
+    paddingRight: "2rem",
     [theme.breakpoints.down("xs")]: {   //for down to cell phone size
       height: "2.5em",
       width: "2.5em"

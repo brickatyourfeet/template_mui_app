@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   mainContainer: {
-    marginTop: "5em",
+    marginTop: "18em",
     [theme.breakpoints.down("md")]: {
       marginTop: "3em"
     },
@@ -88,7 +88,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   herbzBackground: {
-    backgroundImage: `url("/assets/hexlight.svg")`,
+    backgroundImage: `url("/assets/rainier1.svg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -102,23 +102,27 @@ const useStyles = makeStyles(theme => ({
     boxShadow: theme.shadows[10],
     borderRadius: 15,
     padding: "10em",
+    //height: "300px",
+    height: "15vh",
+    width: "75vw",
     [theme.breakpoints.down("sm")]: {
       paddingTop: "8em",
       paddingBottom: "8em",
       paddingLeft: 0,
       paddingRight: 0,
       borderRadius: 0,
-      width: "100%"
+      width: "100%",
+      //height: "75vh"
     }
   },
   infoBackground: {
     position: "absolute",
     zIndex: -1,
-    backgroundImage: `url("/assets/hexblur1.svg")`,
-    backgroundPosition: "center",
+    backgroundImage: `url("/assets/ctabg2.jpg")`,
+    //backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: "100%",
+    height: "120%",
     width: "100%"
   }
 }));
@@ -139,7 +143,7 @@ export default function Landing(props) {
       >
     <Head>
       <title key="title">
-        MAKE THIS TITLE TAG COUNT -- also the meta
+        Small Batch | Wildcrafted | Herbalist Formulated Elixirs 
       </title>
       <meta name="description" key="description" content="Rainier Elixirs | 
         Wildcrafted locally sourced tincture organic 
@@ -174,8 +178,8 @@ export default function Landing(props) {
                 style={{ marginBottom: matchesXS ? "10em" : 0 }}
                 direction="column"
               >
-                <Typography variant="h1" style={{ color: "black", textShadow: "2px 2px white" }}>
-                  Highly potent, small batch, wild & live herbal products made in the Pacific Northwest
+                <Typography variant="h1" style={{ color: "white", textShadow: "4px 4px black", fontSize: "4.5rem" }}>
+                  Wild & living herbal elixirs handcrafted in the Pacific Northwest
                 </Typography>
 
                 <Typography style={{ color: "black", borderColor: "black" }} variant="subtitle2">
@@ -206,7 +210,7 @@ export default function Landing(props) {
               }}
             >
               <Grid container direction="column">
-                <Typography variant="h1" style={{color: "white", textShadow: "2px 2px black"}}>
+                {/* <Typography variant="h1" style={{color: "white", textShadow: "2px 2px black"}}>
                   Contact
                 </Typography>
                 <Typography variant="subtitle2" style={{color: "white", textShadow: "2px 2px black"}}>
@@ -227,7 +231,7 @@ export default function Landing(props) {
                     <span style={{ marginRight: 10 }}>Learn More</span>
                     <ButtonArrow width={10} height={10} fill="white" />
                   </Button>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
           </Grid>
@@ -240,7 +244,7 @@ export default function Landing(props) {
         {/*-----Herbz-----*/}
         <Grid         //the height and marginTop here may need adjusting based on bg image
           container
-          style={{ height: "100em", marginTop: "0em" }}  
+          style={{ height: "100em", marginTop: "30em" }}  
           alignItems="center"
           justifyContent="center"
         >
@@ -255,12 +259,12 @@ export default function Landing(props) {
               >
                 <Grid item>
                   <Typography variant="h3" gutterBottom>
-                    Herbz
+                    Visit our shop
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant="subtitle1">
-                    Herbz descript 1
+                    Summer shop drop 7.7.22!
                   </Typography>
                   <Button
                     component={Link}
@@ -290,8 +294,8 @@ export default function Landing(props) {
         <LazyLoadComponent threshold={850}>
           <CallToAction 
             setValue={props.setValue} 
-            setBgImgNum={props.setBgImgNum} 
-            bgImg0000={props.bgImg0000}
+            // setBgImgNum={props.setBgImgNum} 
+            // bgImg0000={props.bgImg0000}
           />
         </LazyLoadComponent>
       </Grid>

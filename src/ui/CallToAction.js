@@ -61,15 +61,16 @@ const useStyles = makeStyles(theme => ({
     }
   },                                        
   background: {                            
-    backgroundImage: `url("/assets/ctabg2.jpg")`,
+    backgroundImage: `url("/assets/bask.jpg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
+    filter: "grayscale(100%)",
     height: "60em",
     width: "100%",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: `url("/assets/tempmobile.jpg")`,
+      backgroundImage: `url("/assets/hops-mobile.jpg")`,
       backgroundAttachment: "inherit" //this will get rid of parallax (static) bg
     }
   },

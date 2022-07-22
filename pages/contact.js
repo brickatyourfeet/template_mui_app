@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     height: "60em",
     paddingBottom: "10em", //for lifting / aligning background -- may change this based on bg
     [theme.breakpoints.down("md")]: {
-      backgroundImage: `url("/assets/tempmobile.jpg")`
+      backgroundImage: `url("/assets/nettle-mobile.jpg")`,
+      filter: "grayscale(100%)" //let's goooooooooooooo
     }
   },
   consultationButton: {
@@ -58,7 +59,6 @@ const useStyles = makeStyles(theme => ({
     height: 45,
     width: 245,
     fontSize: "1rem",
-    textShadow: `2px solid ${theme.palette.common.teal}`,
     backgroundColor: theme.palette.common.red,
     "&:hover": {
       backgroundColor: theme.palette.secondary.light
@@ -178,21 +178,22 @@ export default function Contact(props) {
         alignItems="center"
         style={{
           marginBottom: matchesMD ? "5em" : 0,
-          marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0
+          marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0,
+          backgroundImage: `url("/assets/ctabg0.jpg")` /////mandala half here
         }}
         lg={4}
         xl={3}
       >
-        <Grid item>
+        <Grid item style={{}}>
           <Grid container direction="column">
             <Grid item>
-              <Typography
+              {/* <Typography
                 align={matchesMD ? "center" : undefined}
-                variant="h1"
+                variant="h2"
                 style={{ lineHeight: 1 }}
               >
                 Contact Us
-              </Typography>
+              </Typography> */}
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="body1"
@@ -460,7 +461,7 @@ export default function Contact(props) {
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="subtitle2"
-                style={{ fontSize: "1.5rem" }}
+                style={{ fontSize: "1.5rem", textShadow: "1px 1px teal" }}
               >
                 Get 'em in your body.'
               </Typography>
