@@ -110,8 +110,11 @@ const useStyles = makeStyles(theme => ({
     padding: "10em",
     //height: "300px",
     height: "15vh",
-    width: "75vw",
-    [theme.breakpoints.down("sm")]: {
+    //width: "55vw",
+    [theme.breakpoints.up("xl")]: {
+      width: "36vw"
+    },
+    [theme.breakpoints.down("md")]: {
       paddingTop: "8em",
       paddingBottom: "8em",
       paddingLeft: 0,
@@ -269,7 +272,7 @@ export default function Landing(props) {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" style={{color: "white"}}>
                     Summer shop drop 7.7.22!
                   </Typography>
                   <Button

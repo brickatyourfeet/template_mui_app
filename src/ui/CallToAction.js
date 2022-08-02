@@ -137,10 +137,10 @@ export default function CallToAction(props) {
                 textShadow: "2px 2px black"
               }}
             >
-              CTA
+              Shop Tinctures
               <br />
-              {matchesSM && <React.Fragment><br/> <p>smallllll test </p></React.Fragment>}
-              Here it is
+              {matchesSM && <React.Fragment><br/> <p>Glad you made it.</p></React.Fragment>}
+              They're here.
             </Typography>
             <Typography 
               variant="subtitle2" 
@@ -148,12 +148,14 @@ export default function CallToAction(props) {
                 fontSize: matchesSM ? "1.24" : "1.5rem",
                 textShadow: "2px 2px black"
               }}>
-              Some more words
+              Just click below.
             </Typography>
             <Grid container justifyContent={matchesSM ? "center" : undefined} item>
               <Button
                 component={Link}
-                href="/herbz"
+                href="https://www.etsy.com/shop/rainierelixirs/"
+                rel="noopener noreferrer"
+                target="_blank" 
                 variant="outlined"
                 className={classes.learnButton}
                 onClick={() => props.setValue(2)}
