@@ -175,6 +175,7 @@ export default function CallToAction(props) {
           href="/contact"
           variant="contained"
           className={classes.consultationButton}
+          style={{color: "black"}}
           onClick={() => props.setValue(5)}
         >
           Contact

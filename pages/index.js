@@ -88,15 +88,21 @@ const useStyles = makeStyles(theme => ({
     }
   },
   herbzBackground: {
-    backgroundImage: `url("/assets/rainier1.svg")`,
+    backgroundImage: `url("/assets/transdala.png")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: "100%",
+    height: "150%",
     width: "100%",
-    //opacity: 0.1
+    marginTop: "-15em",
+    marginBottom: "-35em",
+    //opacity: 0.5
   },
   herbzCard: {
+    backgroundImage: `url("/assets/tincs.jpg")`,
+    backgroundPosition: "center",
+    //backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
     position: "absolute",
     justifyContent: "flex-start",
     boxShadow: theme.shadows[10],
@@ -122,7 +128,7 @@ const useStyles = makeStyles(theme => ({
     //backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: "120%",
+    height: "150%",
     width: "100%"
   }
 }));
@@ -258,7 +264,7 @@ export default function Landing(props) {
                 style={{ textAlign: "center" }}
               >
                 <Grid item>
-                  <Typography variant="h3" gutterBottom>
+                  <Typography variant="h1" style={{ color: "white", fontSize: "6.5rem", textShadow: "-4px -2px black"  }} gutterBottom>
                     Visit our shop
                   </Typography>
                 </Grid>

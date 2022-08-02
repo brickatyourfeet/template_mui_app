@@ -101,7 +101,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   drawer: {
-    backgroundColor: theme.palette.common.teal,
+    backgroundColor: 'black',
 
   },
   drawerItem: {
@@ -119,7 +119,8 @@ const useStyles = makeStyles(theme => ({
   },
   drawerIcon: {
     height: '50px',
-    width: '50px'
+    width: '50px',
+    color: "white"
   },
   drawerIconContainer: {
     marginLeft: 'auto',

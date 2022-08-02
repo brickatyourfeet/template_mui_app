@@ -32,7 +32,7 @@ export default createTheme({
       fontFamily: 'Ubuntu Condensed',
       fontSize: '1rem',
       textTransform: 'none',
-      // color: ""
+      color: "white"
     },
     h1: {
       fontFamily: "Helvetica Neue",
@@ -78,7 +78,7 @@ export default createTheme({
       color: customGrey
     },
     learnButton: {
-      borderColor: customTeal,
+      borderColor: customTeal,   ///get rid of the teal?
       borderWidth: 2,
       textTransform: "none",
       color: customTeal,
@@ -90,7 +90,7 @@ export default createTheme({
   overrides: { //for overriding all of a default mui component
     MuiInputLabel: {
       root: {
-        color: customTeal,
+        //color: customTeal,
         fontSize: "1rem"
       }
     },

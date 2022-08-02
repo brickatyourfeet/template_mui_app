@@ -27,12 +27,13 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 50,
     height: 80,
     width: 205,
-    backgroundColor: theme.palette.common.red,
+    backgroundColor: "theme.palette.common.red",
     fontSize: "1.5rem",
     marginRight: "5em",
     marginLeft: "2em",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.light
+      backgroundColor: theme.palette.secondary.light,
+      fontColor: "white"
     },
     [theme.breakpoints.down("md")]: {
       marginLeft: 0,
@@ -59,9 +60,10 @@ const useStyles = makeStyles(theme => ({
     height: 45,
     width: 245,
     fontSize: "1rem",
-    backgroundColor: theme.palette.common.red,
+    backgroundColor: "black",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.light
+      backgroundColor: theme.palette.secondary.light,
+      color: "black"
     },
     [theme.breakpoints.down("sm")]: {
       height: 40,
@@ -179,7 +181,9 @@ export default function Contact(props) {
         style={{
           marginBottom: matchesMD ? "5em" : 0,
           marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0,
-          backgroundImage: `url("/assets/ctabg0.jpg")` /////mandala half here
+          backgroundImage: `url("/assets/leftdala5.jpg")`, /////mandala half here
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
         }}
         lg={4}
         xl={3}
@@ -197,7 +201,7 @@ export default function Contact(props) {
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="body1"
-                style={{ color: theme.palette.common.teal }}
+                style={{ color: "black", textShadow: "1px 1px black" }}
               >
                 Here's the info
               </Typography>
@@ -213,11 +217,11 @@ export default function Contact(props) {
               <Grid item>
                 <Typography
                   variant="body1"
-                  style={{ color: theme.palette.common.teal, fontSize: "1rem" }}
+                  style={{ color: "black", fontSize: "1rem", textShadow: "1px 1px black" }}
                 >
                   <a
                     href="tel:5555555555"
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: "none", color: "inherit", textShadow: "1px 1px black" }}
                   >
                     (555) 555-5555 {/** add google voice line? */}
                   </a>
@@ -235,7 +239,7 @@ export default function Contact(props) {
               <Grid item>
                 <Typography
                   variant="body1"
-                  style={{ color: theme.palette.common.teal, fontSize: "1rem" }}
+                  style={{ color: "black", fontSize: "1rem", textShadow: "1px 1px black" }}
                 >
                   <a
                     href="mailto:rainierelixirs@gmail.com"
@@ -461,7 +465,7 @@ export default function Contact(props) {
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="subtitle2"
-                style={{ fontSize: "1.5rem", textShadow: "1px 1px teal" }}
+                style={{ fontSize: "1.5rem", textShadow: "1px 1px black" }}
               >
                 Get 'em in your body.'
               </Typography>
