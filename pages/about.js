@@ -14,6 +14,10 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "50em",
     lineHeight: 1.4
   },
+  middleBoundStuff: {
+    maxWidth: "50em",
+    lineHeight: 1.4
+  },
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
@@ -52,7 +56,7 @@ export default function About(props) {
       </title>
       <meta name="description" key="description" content="Rainier Elixirs | 
         Wildcrafted locally sourced tincture organic 
-        northwest essential herbs not oils teeth and plaque conspiracy and metallica"
+        northwest essential herbs not oils - teeth and plaque conspiracy and metallica"
       />
       <meta property="og:title" content="Put a blurb about rainier elixirs here" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com/about" />
@@ -84,23 +88,8 @@ export default function About(props) {
       </Grid>
 
 
-
-
-
-      <Grid
-        item
-        container
-        className={classes.rowContainer}
-        style={{ marginTop: "10em", marginBottom: "10em" }}
-        direction={matchesMD ? "column" : "row"}
-        alignItems={matchesMD ? "center" : undefined}
-        justifyContent="space-between"
-      >
-
-
-        <Grid item>
-        <Grid item>
-          <Typography align="center" variant="h4" gutterBottom>
+      <Grid item style={{paddingTop: "5em"}}>
+          <Typography align="center" variant="h4" gutterBottom >
             The Herbalist
           </Typography>
         </Grid>
@@ -108,26 +97,17 @@ export default function About(props) {
           <Typography variant="body1" paragraph align="center">
             Jewell Braden
           </Typography>
-          <Typography variant="body1" paragraph align="center">
+          <Typography variant="body1" paragraph align="center" >
             Herbalist - Wildcrafter - Formulator
           </Typography>
         </Grid>
         <Grid item container justifyContent="center" lg>
           <Avatar alt="avatar" src="/assets/jewell.jpg" className={classes.avatar} style={{maxHeight: matchesMD ? 350 : "44em", filter: "grayscale(100%)"}} />
         </Grid>
-        </Grid>
 
-{/* move text to here in its own container */}
 
-<Grid item>
-          <Grid
-            item
-            container
-            direction="column"
-            lg
-            style={{ maxWidth: "35em" }}
-          >
-            <Grid item>
+
+        <Grid item>
               <Typography
                 align={"center"}
                 variant="h4"
@@ -152,28 +132,8 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
 
             </Grid>
             </Grid>
-          </Grid>
-        </Grid>
 
-
-      </Grid>
-
-
-
-
-
-
-
-      <Grid
-        item
-        container
-        className={classes.rowContainer}
-        style={{ marginTop: "10em", marginBottom: "10em" }}
-        direction={matchesMD ? "column" : "row"}
-        alignItems={matchesMD ? "center" : undefined}
-        justifyContent="space-between"
-      >
-        <Grid item>
+            <Grid item>
           <Grid
             item
             container
@@ -231,6 +191,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
             </Grid>
           </Grid>
         </Grid>
+
         <Grid item>
           <Grid item container justifyContent="center" lg>
             <img
@@ -240,7 +201,11 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
             />
           </Grid>
         </Grid>
-      </Grid>
+
+
+
+
+
 
       <Grid item>
         <CallToAction setValue={props.setValue} />
