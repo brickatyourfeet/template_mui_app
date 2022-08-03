@@ -128,20 +128,8 @@ Since 2007, I?ve completed herbal courses with Jane Bothwell, Rosemary Gladstar,
 
 I live in the Pacific Northwest with my husband & two kids, and we are lucky enough to be surrounded by lush, bountiful forests in the mountains, lowlands & coastlines of our region. Outings & vacations most often include lots of wild herb hunting!
               </Typography>
+
               <Grid item>
-
-            </Grid>
-            </Grid>
-
-            <Grid item>
-          <Grid
-            item
-            container
-            direction="column"
-            lg
-            style={{ maxWidth: "35em" }}
-          >
-            <Grid item>
               <Typography
                 align={"center"}
                 variant="h4"
@@ -189,6 +177,22 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
             Every drop is chock-full of vital plant nutrients and energy to elicit deep healing and nourishment.              </Typography>
             </Grid>
             </Grid>
+
+
+              <Grid item>
+
+            </Grid>
+            </Grid>
+
+            <Grid item>
+          <Grid
+            item
+            container
+            direction="column"
+            lg
+            style={{ maxWidth: "35em" }}
+          >
+
           </Grid>
         </Grid>
 
