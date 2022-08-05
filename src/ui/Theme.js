@@ -78,10 +78,10 @@ export default createTheme({
       color: customGrey
     },
     learnButton: {
-      borderColor: customTeal,   ///get rid of the teal?
+      borderColor: "white", 
       borderWidth: 2,
       textTransform: "none",
-      color: customTeal,
+      color: "white",
       borderRadius: 50,
       fontFamily: "Roboto",
       fontWeight: "bold"
@@ -101,10 +101,10 @@ export default createTheme({
       },
       underline: {
         "&:before": { //before clicking on the input
-          borderBottom: `2px solid ${customTeal}`
+          borderBottom: `2px solid black`
         },
         "&:hover:not($disabled):not($focused):not($error):before": {
-          borderBottom: `2px solid ${customTeal}`
+          borderBottom: `2px solid black`
         }
       }
     }

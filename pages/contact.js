@@ -6,9 +6,6 @@ import {Grid, Typography, Button, TextField, useMediaQuery, Dialog, DialogConten
 import Head from "next/head";
 import ButtonArrow from "../src/ui/ButtonArrow";
 
-//import background from "../assets/ctabg0.jpg";
-//import mobileBackground from "../assets/tempmobile.jpg";
-
 const useStyles = makeStyles(theme => ({
   background: {
     backgroundImage: `url("/assets/ctabg0.jpg")`,
@@ -44,13 +41,14 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.learnButton,
     fontSize: "0.7rem",
     height: 35,
-    padding: 5,
+    padding: "1rem",
+    color: "white",
     [theme.breakpoints.down("md")]: {
       marginBottom: "2em"
     }
   },
   message: {
-    border: `2px solid ${theme.palette.common.teal}`,
+    border: `2px solid black`,
     marginTop: "5em",
     borderRadius: 5
   },
@@ -223,7 +221,7 @@ export default function Contact(props) {
                     href="tel:5555555555"
                     style={{ textDecoration: "none", color: "inherit", textShadow: "1px 1px black" }}
                   >
-                    (555) 555-5555 {/** add google voice line? */}
+                    (206) 973-3729
                   </a>
                 </Typography> {/** add social media icons / info too? */}
               </Grid>
@@ -465,23 +463,23 @@ export default function Contact(props) {
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="subtitle2"
-                style={{ fontSize: "1.5rem", textShadow: "1px 1px black" }}
+                style={{ fontSize: "1.5rem", textShadow: "1px 1px black", paddingBottom: "3rem" }}
               >
                 Get 'em in your body.'
               </Typography>
               <Grid container justifyContent={matchesMD ? "center" : undefined} item>
                 <Button
                   component={Link}
-                  href="/herbz"
+                  href="https://www.instagram.com/rainierelixirs"
                   variant="outlined"
                   className={classes.learnButton}
                   onClick={() => props.setValue(2)}
                 >
-                  <span style={{ marginRight: 5 }}>Learn More</span>
+                  <span style={{ marginRight: 5 }}>Follow</span>
                   <ButtonArrow
                     width={10}
                     height={10}
-                    fill={theme.palette.common.teal}
+                    fill="white"
                   />
                 </Button>
               </Grid>

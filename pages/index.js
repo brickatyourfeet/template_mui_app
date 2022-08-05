@@ -36,7 +36,8 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.learnButton,
     fontSize: "0.9rem",
     height: 45,
-    width: 145
+    width: 145,
+    padding: "1rem"
   },
   learnButton: {
     ...theme.typography.learnButton,
@@ -273,11 +274,11 @@ export default function Landing(props) {
                 </Grid>
                 <Grid item>
                   <Typography variant="subtitle1" style={{color: "white"}}>
-                    Summer shop drop 7.7.22!
+                    Summer shop drop on now!
                   </Typography>
                   <Button
                     component={Link}
-                    href="/herbz"
+                    href="https://www.instagram.com/rainierelixirs"
                     className={classes.learnButtonHero}
                     variant="outlined"
                     onClick={() => props.setValue(2)}

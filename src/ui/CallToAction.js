@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Typography, Button, useMediaQuery, Grid} from "@material-ui/core";
+import {Typography, Button, useMediaQuery, Grid, Hidden} from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { alpha } from '@material-ui/core/styles/colorManipulator';
 import ButtonArrow from "./ButtonArrow";
@@ -56,6 +56,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.7rem",
     height: 35,
     padding: 5,
+    padding: "1rem",
     [theme.breakpoints.down("sm")]: {
       marginBottom: "2em"
     }
@@ -150,7 +151,7 @@ export default function CallToAction(props) {
               }}>
               Just click below.
             </Typography>
-            <Grid container justifyContent={matchesSM ? "center" : undefined} item>
+            <Grid container justifyContent={matchesSM ? "center" : undefined} item style={{paddingTop: "2rem"}}>
               <Button
                 component={Link}
                 href="https://www.etsy.com/shop/rainierelixirs/"
@@ -160,7 +161,7 @@ export default function CallToAction(props) {
                 className={classes.learnButton}
                 onClick={() => props.setValue(2)}
               >
-                <span style={{ marginRight: 5 }}>Learn More</span>
+                <span style={{ marginRight: 5 }}>Get Some</span>
                 <ButtonArrow
                   width={10}
                   height={10}
@@ -172,16 +173,18 @@ export default function CallToAction(props) {
         </Grid>
       </Grid>
       <Grid item>
+      <Hidden mdDown>
         <Button
           component={Link}
-          href="/contact"
+          href="https://www.instagram.com/rainierelixirs"
           variant="contained"
           className={classes.consultationButton}
           style={{color: "black"}}
           onClick={() => props.setValue(5)}
         >
-          Contact
+          Follow
         </Button>
+        </Hidden>
       </Grid>
     </Grid>
   );

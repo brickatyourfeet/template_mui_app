@@ -101,7 +101,7 @@ export default function About(props) {
             Herbalist - Wildcrafter - Formulator
           </Typography>
         </Grid>
-        <Grid item container justifyContent="center" lg>
+        <Grid item container justifyContent="center" lg style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}>
           <Avatar alt="avatar" src="/assets/jewell.jpg" className={classes.avatar} style={{maxHeight: matchesMD ? 350 : "44em", filter: "grayscale(100%)"}} />
         </Grid>
 
@@ -121,6 +121,7 @@ export default function About(props) {
                 variant="body1"
                 align={"center"}
                 paragraph
+                style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}
               >
                               Hiya from Rainier Elixirs! I've been studying herbalism for over 15 years and enjoy wildcrafting the freshest & healthiest herbs to offer in our blends.
 
@@ -143,6 +144,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 variant="body1"
                 align={"center"}
                 paragraph
+                style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}
               >
                 Small batches mean that we control exactly what goes into each blend, and are able to produce them using the most effective methods. This means higher quality herbs & solvents (wild & live), longer macerating times (up to a year), and the ability to use cold press extraction (which squeezes out every last drop of herbal gold). 
               </Typography>
@@ -158,6 +160,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 variant="body1"
                 align={"center"}
                 paragraph
+                style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}
               >
                When plants are dried, they lose many of their nutrients and all of their vitality as a result. Furthermore, the longer a plant remains dried before it is used as medicine, the more nutrients it will lose. Using live plants allows the extraction of almost all of the plant?s nutrients and vital energy into the solution & can be seen as an encapsulation of the entire plant. 
               </Typography>
@@ -172,31 +175,17 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 variant="body1"
                 align={"center"}
                 paragraph
+                style={{ paddingBottom: matchesMD ? "1em" : "3em"}}
               >
             Wild plants in their natural habitat are able to absorb their desired nutrients from their surroundings as nature intended, creating a well-rounded herb with the highest amount of nutrients possible. Farmed plants - while they have their place in herbalism when wild plants are unavailable - lack most of their natural food sources found in their wild habitat, and therefore are lacking in nutrients compared to their wild counterparts. 
             Every drop is chock-full of vital plant nutrients and energy to elicit deep healing and nourishment.              </Typography>
             </Grid>
             </Grid>
 
-
-              <Grid item>
-
-            </Grid>
             </Grid>
 
-            <Grid item>
-          <Grid
-            item
-            container
-            direction="column"
-            lg
-            style={{ maxWidth: "35em" }}
-          >
 
-          </Grid>
-        </Grid>
-
-        <Grid item>
+        {/* <Grid item>
           <Grid item container justifyContent="center" lg>
             <img
               src="/assets/basket.jpg"
@@ -204,7 +193,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
               style={{ maxHeight: matchesMD ? 350 : "44em", filter: "grayscale(100%)" }}
             />
           </Grid>
-        </Grid>
+        </Grid> */}
 
 
 
