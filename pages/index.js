@@ -141,6 +141,7 @@ export default function Landing(props) {
   const classes = useStyles();
   const theme = useTheme();
   //media query variables for checking screen size
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
@@ -188,7 +189,7 @@ export default function Landing(props) {
                 style={{ marginBottom: matchesXS ? "10em" : 0 }}
                 direction="column"
               >
-                <Typography variant="h1" style={{ color: "white", textShadow: "4px 4px black", fontSize: "4.5rem" }}>
+                <Typography variant="h1" style={{ color: "white", textShadow: "4px 4px black", fontSize: matchesMD ? "3.5rem" : "4.5rem" }}>
                   Wild & living herbal elixirs handcrafted in the Pacific Northwest
                 </Typography>
 
