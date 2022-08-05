@@ -115,7 +115,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   drawerItemConsultation: {
-    backgroundColor: theme.palette.common.red
+    //backgroundColor: theme.palette.common.red
   },
   drawerIcon: {
     height: '50px',

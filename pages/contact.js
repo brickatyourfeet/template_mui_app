@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 50,
     height: 80,
     width: 205,
-    backgroundColor: "theme.palette.common.red",
+    //backgroundColor: "theme.palette.common.red",
     fontSize: "1.5rem",
     marginRight: "5em",
     marginLeft: "2em",

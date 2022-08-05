@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   ctaBlurb: {
-    backgroundColor: alpha(theme.palette.common.red, 0.4),
+    //backgroundColor: alpha(theme.palette.common.red, 0.4),
     borderRadius: 20,
     height: 350,
     width: 450,

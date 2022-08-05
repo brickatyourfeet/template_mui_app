@@ -20,7 +20,7 @@ import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-componen
 const useStyles = makeStyles(theme => ({
   consultationButton: {
     ...theme.typography.consultation,
-    backgroundColor: theme.palette.common.red,
+    //backgroundColor: theme.palette.common.red,
     borderRadius: 50,
     height: 45,
     width: 145,

@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   consultationButton: {
     ...theme.typography.consultation,
     borderRadius: 50,
-    backgroundColor: theme.palette.common.red,
+    //backgroundColor: theme.palette.common.red,
     height: 50,
     width: 225,
     marginTop: "5em",
@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Raleway",
     fontWeight: 700,
     fontSize: "2rem",
-    color: theme.palette.common.red
+    //color: theme.palette.common.red
   }
 }));
 
