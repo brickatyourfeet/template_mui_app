@@ -102,14 +102,14 @@ export default function About(props) {
           </Typography>
         </Grid>
         <Grid item container justifyContent="center" lg style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}>
-          <Avatar alt="avatar" src="/assets/jewell.jpg" className={classes.avatar} style={{maxHeight: matchesMD ? 350 : "44em", filter: "grayscale(100%)"}} />
+          <Avatar alt="avatar" src="/assets/jewell.jpg" className={classes.avatar} style={{maxHeight: matchesMD ? "350" : "44em", filter: "grayscale(100%)"}} />
         </Grid>
 
 
 
         <Grid item>
               <Typography
-                align={"center"}
+                align="center"
                 variant="h4"
                 gutterBottom
               >
@@ -119,9 +119,9 @@ export default function About(props) {
             <Grid item>
               <Typography
                 variant="body1"
-                align={"center"}
+                align="center"
                 paragraph
-                style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}
+                style={{ paddingBottom: matchesMD ? "1em" : "1.5em", paddingRight: matchesMD ? "2rem" : "15rem", paddingLeft: matchesMD ? "2rem" : "15rem"}}
               >
                               Hiya from Rainier Elixirs! I've been studying herbalism for over 15 years and enjoy wildcrafting the freshest & healthiest herbs to offer in our blends.
 
@@ -144,7 +144,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 variant="body1"
                 align={"center"}
                 paragraph
-                style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}
+                style={{ paddingBottom: matchesMD ? "1em" : "1.5em", paddingRight: matchesMD ? "2rem" : "15rem", paddingLeft: matchesMD ? "2rem" : "15rem"}}
               >
                 Small batches mean that we control exactly what goes into each blend, and are able to produce them using the most effective methods. This means higher quality herbs & solvents (wild & live), longer macerating times (up to a year), and the ability to use cold press extraction (which squeezes out every last drop of herbal gold). 
               </Typography>
@@ -160,7 +160,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 variant="body1"
                 align={"center"}
                 paragraph
-                style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}
+                style={{ paddingBottom: matchesMD ? "1em" : "1.5em", paddingRight: matchesMD ? "2rem" : "15rem", paddingLeft: matchesMD ? "2rem" : "15rem"}}
               >
                When plants are dried, they lose many of their nutrients and all of their vitality as a result. Furthermore, the longer a plant remains dried before it is used as medicine, the more nutrients it will lose. Using live plants allows the extraction of almost all of the plant?s nutrients and vital energy into the solution & can be seen as an encapsulation of the entire plant. 
               </Typography>
@@ -175,7 +175,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 variant="body1"
                 align={"center"}
                 paragraph
-                style={{ paddingBottom: matchesMD ? "1em" : "3em"}}
+                style={{ paddingBottom: matchesMD ? "1em" : "3em", paddingRight: matchesMD ? "2rem" : "15rem", paddingLeft: matchesMD ? "2rem" : "15rem"}}
               >
             Wild plants in their natural habitat are able to absorb their desired nutrients from their surroundings as nature intended, creating a well-rounded herb with the highest amount of nutrients possible. Farmed plants - while they have their place in herbalism when wild plants are unavailable - lack most of their natural food sources found in their wild habitat, and therefore are lacking in nutrients compared to their wild counterparts. 
             Every drop is chock-full of vital plant nutrients and energy to elicit deep healing and nourishment.              </Typography>

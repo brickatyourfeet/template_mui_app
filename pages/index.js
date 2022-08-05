@@ -144,6 +144,7 @@ export default function Landing(props) {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Grid 
@@ -270,12 +271,12 @@ export default function Landing(props) {
               >
                 <Grid item>
                   <Typography variant="h1" style={{ color: "white", fontSize: "6.5rem", textShadow: "-4px -2px black"  }} gutterBottom>
-                    Visit our shop
+                    {matchesMD ? null : "Visit our"} shop
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant="subtitle1" style={{color: "white"}}>
-                    Summer shop drop on now!
+                    {matchesMD ? null : "Summer shop drop on now!"}
                   </Typography>
                   <Button
                     component={Link}
@@ -284,7 +285,7 @@ export default function Landing(props) {
                     variant="outlined"
                     onClick={() => props.setValue(2)}
                   >
-                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <span style={{ marginRight: 10 }}>Get some</span>
                     <ButtonArrow
                       width={15}
                       height={15}
