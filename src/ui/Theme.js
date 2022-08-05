@@ -13,7 +13,7 @@ export default createTheme({
       red: customRed
     },
     primary: {
-      main: customRed
+      main: "white"
     },
     secondary: {
       main: customTeal
