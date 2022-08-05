@@ -102,7 +102,7 @@ export default function About(props) {
           </Typography>
         </Grid>
         <Grid item container justifyContent="center" lg style={{ paddingBottom: matchesMD ? "1em" : "1.5em"}}>
-          <Avatar alt="avatar" src="/assets/jewell.jpg" className={classes.avatar} style={{maxHeight: matchesMD ? "350" : "44em", filter: "grayscale(100%)"}} />
+          <Avatar alt="avatar" src="/assets/jewell.jpg" className={classes.avatar} style={{filter: "grayscale(100%)"}} />
         </Grid>
 
 
