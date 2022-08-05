@@ -10,7 +10,7 @@ export default createTheme({
   palette: { //add more color options in the palette
     common: {
       teal: customTeal,
-      red: customRed
+      red: "white"
     },
     primary: {
       main: "white"
