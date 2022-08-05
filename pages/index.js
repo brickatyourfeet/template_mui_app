@@ -66,7 +66,7 @@ const useStyles = makeStyles(theme => ({
   },
   specialText: {
     fontFamily: "Pacifico",
-    color: theme.palette.common.red
+    color: "white"
   },
   subtitle: {
     marginBottom: "1em"
