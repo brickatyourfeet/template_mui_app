@@ -186,8 +186,8 @@ export default function Contact(props) {
         lg={4}
         xl={3}
       >
-        <Grid item style={{}}>
-          <Grid container direction="column">
+        <Grid item>
+          <Grid container direction="column" style={{paddingTop: matchesXS ? "5em": null}}>
             <Grid item>
               {/* <Typography
                 align={matchesMD ? "center" : undefined}
