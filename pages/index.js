@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Link from "../src/Link";
-import {Grid, Button, Typography, useMediaQuery, Card, CardContent, CardMedia}  from "@material-ui/core";
+import {Grid, Button, Typography, useMediaQuery, Card, CardContent, Hidden, CardMedia}  from "@material-ui/core";
 import ButtonArrow from "../src/ui/ButtonArrow";
 import Head from "next/head"
 import CallToAction from "../src/ui/CallToAction";
@@ -164,6 +164,7 @@ export default function Landing(props) {
       <meta property="og:title" content="Put a blurb about rainier elixirs here" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com" />
     </Head>
+    <Hidden smDown>
       <Grid item>
         {/*-----ABOUT Block-----*/}
         <Grid //the height and marginTop here may need adjusting based on bg image
@@ -191,7 +192,7 @@ export default function Landing(props) {
                 direction="column"
               >
                 <Typography variant="h1" style={{ color: "white", textShadow: "4px 4px black", fontSize: matchesMD ? "3.5rem" : "4.5rem" }}>
-                  Wild & living herbal elixirs handcrafted in the Pacific Northwest
+                {matchesMD ? null : "Wild & living herbal elixirs "}handcrafted in the Pacific Northwest
                 </Typography>
 
                 <Typography style={{ color: "black", borderColor: "black" }} variant="subtitle2">
@@ -301,6 +302,7 @@ export default function Landing(props) {
           </LazyLoadComponent>
         </Grid>
       </Grid>
+      </Hidden>
       <Grid item>
         {/*-----CTA-----*/}
         <LazyLoadComponent threshold={850}>
