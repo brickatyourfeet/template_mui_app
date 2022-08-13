@@ -49,7 +49,7 @@ export default function About(props) {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Grid container direction="column">
+    <Grid container direction="column" style={{ marginTop: matchesMD ? "-4em" : "2em" }}>
     <Head>
       <title key="title">
         About Rainier Elixirs - Wildcraft local organic 60 characters
