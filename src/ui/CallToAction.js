@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Typography, Button, useMediaQuery, Grid, Hidden} from "@material-ui/core";
+import {Typography, Button, ButtonGroup, useMediaQuery, Grid, Hidden} from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { alpha } from '@material-ui/core/styles/colorManipulator';
 import ButtonArrow from "./ButtonArrow";
@@ -151,22 +151,38 @@ export default function CallToAction(props) {
               Just click below.
             </Typography> */}
             <Grid container justifyContent={matchesSM ? "center" : undefined} item style={{paddingTop: "2rem"}}>
-              <Button
-                component={Link}
-                href="https://www.etsy.com/shop/rainierelixirs/"
-                rel="noopener noreferrer"
-                target="_blank" 
-                variant="outlined"
-                className={classes.learnButton}
-                onClick={() => props.setValue(2)}
-              >
-                <span style={{ marginRight: 5 }}>Get Some</span>
-                <ButtonArrow
-                  width={10}
-                  height={10}
-                  fill={theme.palette.common.teal}
-                />
-              </Button>
+
+              <ButtonGroup
+                    orientation="vertical"
+                    color="primary"
+                    aria-label="vertical contained primary button group"
+                    variant="text"
+                  >
+                    <Button 
+                      href="https://www.etsy.com/shop/rainierelixirs/"
+                      rel="noopener noreferrer"
+                      target="_blank" >
+                       <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.5rem" }}>
+                        Shop Tinctures Now
+                        </Typography>
+                      </Button>
+                      <Button 
+                      href="/about"
+                      rel="noopener noreferrer"
+                       >
+                       <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.3rem" }}>
+                        Learn More
+                        </Typography>
+                      </Button>
+                      <Button 
+                      href="/herbz"
+                      rel="noopener noreferrer"
+                      >
+                       <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.1rem" }}>
+                        Social
+                        </Typography>
+                      </Button>
+                  </ButtonGroup>
             </Grid>
           </Grid>
         </Grid>
