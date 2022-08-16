@@ -138,19 +138,18 @@ export default function CallToAction(props) {
                 textShadow: "2px 2px black"
               }}
             >
-              Shop Tinctures
+              Wild & living herbal elixirs handcrafted in the Pacific Northwest
               <br />
-              {matchesSM && <React.Fragment><br/> <p>Glad you made it.</p></React.Fragment>}
-              They're here.
+              {/* {matchesSM && <React.Fragment><br/> <p>Glad you made it.</p></React.Fragment>} */}
             </Typography>
-            <Typography 
+            {/* <Typography 
               variant="subtitle2" 
               style={{ 
                 fontSize: matchesSM ? "1.24" : "1.5rem",
                 textShadow: "2px 2px black"
               }}>
               Just click below.
-            </Typography>
+            </Typography> */}
             <Grid container justifyContent={matchesSM ? "center" : undefined} item style={{paddingTop: "2rem"}}>
               <Button
                 component={Link}

@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Link from "../src/Link";
-import {Grid, Button, Typography, useMediaQuery, Card, CardContent, Hidden, CardMedia}  from "@material-ui/core";
+import {Grid, Button, Fab, Typography, useMediaQuery, Card, CardContent, Hidden, CardMedia}  from "@material-ui/core";
 import ButtonArrow from "../src/ui/ButtonArrow";
 import Head from "next/head"
 import CallToAction from "../src/ui/CallToAction";
@@ -155,11 +155,10 @@ export default function Landing(props) {
       >
     <Head>
       <title key="title">
-        Small Batch | Wildcrafted | Herbalist Formulated Elixirs 
+      Rainier Elixirs | Wildcrafted | Small Batch | Herbalist Crafted
       </title>
-      <meta name="description" key="description" content="Rainier Elixirs | 
-        Wildcrafted locally sourced tincture organic 
-        northwest essential herbs not oils teeth and plaque conspiracy and metallica"
+      <meta name="description" key="description" content="Small batch, wildcrafted elixirs formulated using 
+      organic and wild plants from the Pacific Northwest"
       />
       <meta property="og:title" content="Put a blurb about rainier elixirs here" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com" />
@@ -298,12 +297,12 @@ export default function Landing(props) {
             </CardContent>
           </Card>
           <LazyLoadComponent threshold={850}>
-            <div className={classes.herbzBackground} />
+            <div className={classes.herbzBackground}  />
           </LazyLoadComponent>
         </Grid>
       </Grid>
       </Hidden>
-      <Grid item style={{marginTop: matchesSM ? "-1em" : null}}>
+      <Grid item style={{marginTop: matchesSM ? "-18em" : null}}>
         {/*-----CTA-----*/}
         <LazyLoadComponent threshold={850}>
           <CallToAction 

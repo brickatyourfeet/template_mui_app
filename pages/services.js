@@ -56,7 +56,7 @@ export default function Services(props) {
     <Grid container direction="column">
     <Head>
       <title key="title">
-        Rainier Elixirs | Herb Tincture Medicinal Metallica
+        Services.js
       </title>
       <meta name="description" key="description" content="Rainier Elixirs | 
         Wildcrafted locally sourced tincture organic 

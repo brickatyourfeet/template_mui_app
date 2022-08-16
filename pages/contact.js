@@ -160,11 +160,9 @@ export default function Contact(props) {
     <Grid container direction="row">
     <Head>
       <title key="title">
-        Contact Rainier Elixirs | Send an Email
+      Rainier Elixirs | Contact Us
       </title>
-      <meta name="description" key="description" content="Contact Rainier Elixirs | 
-        Wildcrafted locally sourced tincture organic 
-        northwest essential herbs not oils Send us a message we will heal your ailments pantera"
+      <meta name="description" key="description" content="Drop us a question or learn more about our elixirs!"
       />
       <meta property="og:title" content="Put a blurb about rainier elixirs here" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com/contact" />
@@ -218,7 +216,7 @@ export default function Contact(props) {
                   style={{ color: "black", fontSize: "1rem", textShadow: "1px 1px black" }}
                 >
                   <a
-                    href="tel:5555555555"
+                    href="tel:2069733729" //could get rid of this to have no mobile clickability
                     style={{ textDecoration: "none", color: "inherit", textShadow: "1px 1px black" }}
                   >
                     (206) 973-3729

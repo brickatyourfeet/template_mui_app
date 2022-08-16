@@ -32,11 +32,10 @@ export default function Herbz(props) {
     <Grid container direction="column" style={{backgroundColor: "#607580", marginTop: "-2rem", filter: "grayscale(100%)"}}>
     <Head>
       <title key="title">
-        Rainier Elixirs | Tinctures Herbal Remedies & Medicinal Social Media 
+        Rainier Elixirs | Instagram
       </title> 
-      <meta name="description" key="description" content="Rainier Elixirs | 
-        Wildcrafted locally sourced tincture organic 
-        northwest essential herbs not oils teeth and plaque conspiracy and metallica"
+      <meta name="description" key="description" content="For the most up to date info & photos, check out our
+       Instagram feed!"
         //this one is super important above - work on it
       />
       <meta property="og:title" content="HERBZ SOCIAL Put a blurb about rainier elixirs here" key="og:title" />
