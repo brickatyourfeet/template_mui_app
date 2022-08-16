@@ -302,7 +302,7 @@ export default function Landing(props) {
         </Grid>
       </Grid>
       </Hidden>
-      <Grid item style={{marginTop: matchesSM ? "-18em" : null}}>
+      <Grid item style={{marginTop: matchesSM ? "-14em" : null}}>
         {/*-----CTA-----*/}
         <LazyLoadComponent threshold={850}>
           <CallToAction 
