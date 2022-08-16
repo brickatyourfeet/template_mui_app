@@ -71,7 +71,7 @@ const useStyles = makeStyles(theme => ({
     height: "60em",
     width: "100%",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: `url("/assets/hops-mobile.jpg")`,
+      backgroundImage: `url("/assets/hops-mobile-cut.png")`,
       backgroundAttachment: "inherit" //this will get rid of parallax (static) bg
     }
   },
