@@ -164,7 +164,7 @@ export default function Contact(props) {
       </title>
       <meta name="description" key="description" content="Drop us a question or learn more about our elixirs!"
       />
-      <meta property="og:title" content="Put a blurb about rainier elixirs here" key="og:title" />
+      <meta property="og:title" content="Rainier Elixirs | Contact Us on Social Media, Phone, Email" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com/contact" />
       <link rel="canonical" key="canonical" href="rainierelixirs.com/contact" /> 
     </Head>

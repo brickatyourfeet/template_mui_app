@@ -160,7 +160,7 @@ export default function Landing(props) {
       <meta name="description" key="description" content="Small batch, wildcrafted elixirs formulated using 
       organic and wild plants from the Pacific Northwest"
       />
-      <meta property="og:title" content="Put a blurb about rainier elixirs here" key="og:title" />
+      <meta property="og:title" content="Rainier Elixirs | Tinctures Made with Wildcrafted Medicinal Herbs" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com" />
     </Head>
     <Hidden smDown>

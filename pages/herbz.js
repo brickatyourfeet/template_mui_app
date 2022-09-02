@@ -38,7 +38,7 @@ export default function Herbz(props) {
        Instagram feed!"
         //this one is super important above - work on it
       />
-      <meta property="og:title" content="HERBZ SOCIAL Put a blurb about rainier elixirs here" key="og:title" />
+      <meta property="og:title" content="Rainier Elixirs | Social Media, Photos, and More" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com/herbz" />
       <link rel="canonical" key="canonical" href="rainierelixirs.com/herbz" /> 
     </Head>
