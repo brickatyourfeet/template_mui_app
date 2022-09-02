@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Link from "../src/Link"
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {Grid, Typography, Button, TextField, useMediaQuery, Dialog, DialogContent, CircularProgress, Snackbar} from "@material-ui/core";
+import {Grid, Typography, ButtonGroup, Button, TextField, useMediaQuery, Dialog, DialogContent, CircularProgress, Snackbar} from "@material-ui/core";
 import Head from "next/head";
 import ButtonArrow from "../src/ui/ButtonArrow";
 
@@ -199,7 +199,14 @@ export default function Contact(props) {
                 variant="body1"
                 style={{ color: "black", textShadow: "1px 1px black" }}
               >
-                Here's the info
+                Contact info
+              </Typography>
+              <Typography
+                align={matchesMD ? "center" : undefined}
+                variant="subtitle2"
+                style={{ color: "black", textShadow: "1px 1px black", fontSize: "0.8rem", fontStyle: "italic" }}
+              >
+                (Use IG for quicker response)
               </Typography>
             </Grid>
             <Grid item container style={{ marginTop: "2em" }}>
@@ -447,42 +454,43 @@ export default function Contact(props) {
           }}
         > 
           <Grid container direction="column">
-            <Grid item>
-              <Typography 
-                align={matchesMD ? "center" : undefined} 
-                variant="h1"
-                style={{textShadow: "2px 2px black"}}
-                color='white'
-                >
-                Rainier
-                <br />
-                Elixirs
-              </Typography>
-              <Typography
-                align={matchesMD ? "center" : undefined}
-                variant="subtitle2"
-                style={{ fontSize: "1.5rem", textShadow: "1px 1px black", paddingBottom: "3rem" }}
-              >
-                Get 'em in your body.'
-              </Typography>
-              <Grid container justifyContent={matchesMD ? "center" : undefined} item>
-                <Button
-                  component={Link}
-                  href="https://www.instagram.com/rainierelixirs"
-                  variant="outlined"
-                  className={classes.learnButton}
-                  onClick={() => props.setValue(2)}
-                >
-                  <span style={{ marginRight: 5 }}>Follow</span>
-                  <ButtonArrow
-                    width={10}
-                    height={10}
-                    fill="white"
-                  />
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
+
+          <Grid container justifyContent={matchesSM ? "center" : undefined} item style={{paddingTop: "2rem"}}>
+
+<ButtonGroup
+      orientation="vertical"
+      color="primary"
+      aria-label="vertical contained primary button group"
+      variant="text"
+    >
+      <Button 
+        href="https://www.etsy.com/shop/rainierelixirs/"
+        rel="noopener noreferrer"
+        target="_blank" >
+         <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.5rem" }}>
+          Shop Tinctures Now
+          </Typography>
+        </Button>
+        <Button 
+        href="/about"
+        rel="noopener noreferrer"
+         >
+         <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.3rem" }}>
+          Learn More
+          </Typography>
+        </Button>
+        <Button 
+        href="/herbz"
+        rel="noopener noreferrer"
+        >
+         <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.1rem" }}>
+          Social
+          </Typography>
+        </Button>
+    </ButtonGroup>
+</Grid>
+</Grid>
+
         </Grid>
         {/* <Grid item>
           <Button
