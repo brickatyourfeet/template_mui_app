@@ -84,9 +84,6 @@ const useStyles = makeStyles(theme => ({
     fontSize: "1.5rem",
     marginRight: "5em",
     marginLeft: "2em",
-    "&:hover": {
-      backgroundColor: theme.palette.secondary.light
-    },
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
       marginRight: 0
@@ -196,6 +193,8 @@ export default function CallToAction(props) {
           className={classes.consultationButton}
           style={{color: "black"}}
           onClick={() => props.setValue(5)}
+          rel="noopener noreferrer"
+          target="_blank" 
         >
           Follow
         </Button>

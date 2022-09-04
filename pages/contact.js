@@ -160,11 +160,12 @@ export default function Contact(props) {
     <Grid container direction="row">
     <Head>
       <title key="title">
-      Rainier Elixirs | Contact Us
+      Rainier Elixirs | Contact Us By Phone, Email or Instagram
       </title>
-      <meta name="description" key="description" content="Drop us a question or learn more about our elixirs!"
+      <meta name="description" key="description" content="Send us your questions & comments. Have an elixir 
+      request? Want to know which elixir is best for you? Tell us about it! "
       />
-      <meta property="og:title" content="Rainier Elixirs | Contact Us on Social Media, Phone, Email" key="og:title" />
+      <meta property="og:title" content="Rainier Elixirs | Contact Us on Instagram, Phone, Email" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com/contact" />
       <link rel="canonical" key="canonical" href="rainierelixirs.com/contact" /> 
     </Head>

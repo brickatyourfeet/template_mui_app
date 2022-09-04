@@ -52,12 +52,12 @@ export default function About(props) {
     <Grid container direction="column" style={{ marginTop: matchesMD ? "-4em" : "2em" }}>
     <Head>
       <title key="title">
-        Rainier Elixirs | About Us
+      Rainier Elixirs | About Jewell, Owner & Herbalist
       </title>
-      <meta name="description" key="description" content="Small batch, wildcrafted elixirs formulated using 
-      organic and wild plants from the Pacific Northwest"
+      <meta name="description" key="description" content="Learn about Jewell - the owner, herbalist, 
+      wildcrafter & formulator behind Rainier Elixirs"
       />
-      <meta property="og:title" content="Rainier Elixirs | Learn About the Herbs and the Herbalist" key="og:title" />
+      <meta property="og:title" content="Rainier Elixirs | About Jewell, owner & herbalist" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com/about" />
       <link rel="canonical" key="canonical" href="rainierelixirs.com/about" />  
     </Head>

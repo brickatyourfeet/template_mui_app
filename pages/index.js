@@ -29,6 +29,13 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.secondary.light
     }
   },
+  shopButton: {
+    ...theme.typography.consultation,
+    //backgroundColor: theme.palette.common.red,
+    borderRadius: 50,
+    height: 45,
+    width: 145
+  },
   buttonContainer: {
     marginTop: "1em"
   },
@@ -155,10 +162,10 @@ export default function Landing(props) {
       >
     <Head>
       <title key="title">
-      Rainier Elixirs | Wildcrafted | Small Batch | Herbalist Crafted
+      Rainier Elixirs | Tinctures Made with Wildcrafted Medicinal Herbs
       </title>
-      <meta name="description" key="description" content="Small batch, wildcrafted elixirs formulated using 
-      organic and wild plants from the Pacific Northwest"
+      <meta name="description" key="description" content="Small batch, wildcrafted elixirs 
+      & tinctures formulated using organic, wild & living medicinal plants from the Pacific Northwest. Adaptogens, tonics & remedies."
       />
       <meta property="og:title" content="Rainier Elixirs | Tinctures Made with Wildcrafted Medicinal Herbs" key="og:title" />
       <meta property="og:url" key="og:url" content="rainierelixirs.com" />
@@ -275,23 +282,21 @@ export default function Landing(props) {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography variant="subtitle1" style={{color: "white"}}>
-                    {matchesMD ? null : "Summer shop drop on now!"}
+                  <Typography variant="subtitle1" style={{color: "white", fontSize: "1.5rem", textShadow: "-2.5px -1.5px black"}}>
+                    {matchesMD ? null : "Check now for shop updates!"}
                   </Typography>
                   <Button
-                    component={Link}
-                    href="https://www.instagram.com/rainierelixirs"
-                    className={classes.learnButtonHero}
-                    variant="outlined"
-                    onClick={() => props.setValue(2)}
-                  >
-                    <span style={{ marginRight: 10 }}>Get some</span>
-                    <ButtonArrow
-                      width={15}
-                      height={15}
-                      fill={theme.palette.common.teal}
-                    />
-                  </Button>
+          component={Link}
+          href="https://www.etsy.com/shop/rainierelixirs"
+          variant="contained"
+          className={classes.shopButton}
+          style={{color: "black"}}
+          onClick={() => props.setValue(5)}
+          rel="noopener noreferrer"
+        target="_blank" 
+        >
+          Shop Tinctures
+        </Button>
                 </Grid>
               </Grid>
             </CardContent>
