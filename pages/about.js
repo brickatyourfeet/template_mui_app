@@ -124,7 +124,7 @@ export default function About(props) {
               >
                               Hiya from Rainier Elixirs! I've been studying herbalism for over 15 years and enjoy wildcrafting the freshest & healthiest herbs to offer in our blends.
 
-Since 2007, I?ve completed herbal courses with Jane Bothwell, Rosemary Gladstar, and Michael & Leslie Tierra, as well as studied with Lynda Emashowski in the ways of native & folk herbalism. I also hold a Bachelor of Science in Alternative Medicine.
+Since 2007, I've completed herbal courses with Jane Bothwell, Rosemary Gladstar, and Michael & Leslie Tierra, as well as studied with Lynda Emashowski in the ways of native & folk herbalism. I also hold a Bachelor of Science in Alternative Medicine.
 
 I live in the Pacific Northwest with my husband & two kids, and we are lucky enough to be surrounded by lush, bountiful forests in the mountains, lowlands & coastlines of our region. Outings & vacations most often include lots of wild herb hunting!
               </Typography>
@@ -161,7 +161,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
                 paragraph
                 style={{ paddingBottom: matchesMD ? "1em" : "1.5em", paddingRight: matchesMD ? "2rem" : "15rem", paddingLeft: matchesMD ? "2rem" : "15rem"}}
               >
-               When plants are dried, they lose many of their nutrients and all of their vitality as a result. Furthermore, the longer a plant remains dried before it is used as medicine, the more nutrients it will lose. Using live plants allows the extraction of almost all of the plant?s nutrients and vital energy into the solution & can be seen as an encapsulation of the entire plant. 
+               When plants are dried, they lose many of their nutrients and all of their vitality as a result. Furthermore, the longer a plant remains dried before it is used as medicine, the more nutrients it will lose. Using live plants allows the extraction of almost all of the plant's nutrients and vital energy into the solution & can be seen as an encapsulation of the entire plant. 
               </Typography>
               <Typography
                 align={"center"}
