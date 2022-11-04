@@ -1,3 +1,5 @@
+const formatDate = require("../../scripts/formatDate");
+
 export default function handler(req, res) {
 
   res.statusCode = 200
