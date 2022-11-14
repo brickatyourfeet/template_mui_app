@@ -9,14 +9,6 @@ import CallToAction from "../src/ui/CallToAction";
 //watch network tab to see images loading - this will help set the threshold 
 import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
-
-
-// import service1Icon from "../assets/tincture.svg";
-// import service2Icon from "../assets/tea-bag.svg";
-// import service3Icon from "../assets/green-tea.svg";
-// import herbzBackground from "../assets/hexlight.svg";
-// import infoBackground from "../assets/hexblur1.svg";
-
 const useStyles = makeStyles(theme => ({
   consultationButton: {
     ...theme.typography.consultation,
@@ -229,28 +221,6 @@ export default function Landing(props) {
               }}
             >
               <Grid container direction="column">
-                {/* <Typography variant="h1" style={{color: "white", textShadow: "2px 2px black"}}>
-                  Contact
-                </Typography>
-                <Typography variant="subtitle2" style={{color: "white", textShadow: "2px 2px black"}}>
-                  Say hiya buddy!{" "}
-                  <span role="img" aria-label="waving hand">
-                    👋🏻
-                  </span>
-                </Typography>
-                <Grid item>
-                  <Button
-                    component={Link}
-                    href="/contact"
-                    variant="outlined"
-                    style={{ color: "white", borderColor: "white" }}
-                    className={classes.learnButton}
-                    onClick={() => props.setValue(4)}
-                  >
-                    <span style={{ marginRight: 10 }}>Learn More</span>
-                    <ButtonArrow width={10} height={10} fill="white" />
-                  </Button>
-                </Grid> */}
               </Grid>
             </Grid>
           </Grid>

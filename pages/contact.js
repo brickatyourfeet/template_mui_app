@@ -103,11 +103,6 @@ export default function Contact(props) {
         valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value);
         !valid ? setEmailHelper("Please enter valid Email Address") : setEmailHelper(""); //using empty string to have error length of 0
         break;
-      // case "phone":
-      //   setPhone(event.target.value);
-      //   //valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(event.target.value);
-      //   //!valid ? setPhoneHelper("Invalid phone") : setPhoneHelper("");
-      //   break;
       default:
         break;
     }
@@ -133,7 +128,6 @@ export default function Contact(props) {
         setOpen(false);
         setName("");
         setEmail("");
-        //setPhone("");
         setMessage("");
         setAlert({ open: true, color: "#4BB543" }); //change these colors, and extract to theme at some point
         setAlertMesssage("Message sent successfully!");
@@ -188,13 +182,6 @@ export default function Contact(props) {
         <Grid item>
           <Grid container direction="column" style={{paddingTop: matchesXS ? "5em": null}}>
             <Grid item>
-              {/* <Typography
-                align={matchesMD ? "center" : undefined}
-                variant="h2"
-                style={{ lineHeight: 1 }}
-              >
-                Contact Us
-              </Typography> */}
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="body1"
@@ -276,17 +263,6 @@ export default function Contact(props) {
                 />
               </Grid>
               <Grid item style={{ marginBottom: "0.5em" }}>
-              {/** 
-                <TextField
-                  label="Phone"
-                  helperText={phoneHelper}
-                  //error={phoneHelper.length !== 0}
-                  id="phone"
-                  fullWidth
-                  value={phone}
-                  onChange={onChange}
-                />
-              */}
               </Grid>
             </Grid>
             <Grid item style={{ width: "20em" }}>
@@ -307,8 +283,6 @@ export default function Contact(props) {
                   name.length === 0 ||
                   message.length === 0 ||
                   email.length === 0 ||
-                  // phone.length === 0 ||
-                  // phoneHelper.length !== 0 ||
                   emailHelper.length !== 0 
                 }
                 variant="contained"
@@ -364,17 +338,6 @@ export default function Contact(props) {
               />
             </Grid>
             <Grid item style={{ marginBottom: "0.5em" }}>
-            {/** 
-              <TextField
-                label="Phone"
-                helperText={phoneHelper}
-                //error={phoneHelper.length !== 0}
-                id="phone"
-                fullWidth
-                value={phone}
-                onChange={onChange}
-              />
-            */}
             </Grid>
           </Grid>
           <Grid item style={{ width: matchesSM ? "100%" : "20em" }}>  {/** message box is full and centered on small devices */}
@@ -411,8 +374,6 @@ export default function Contact(props) {
                   name.length === 0 ||
                   message.length === 0 ||
                   email.length === 0 ||
-                  // phone.length === 0 ||
-                  // phoneHelper.length !== 0 ||
                   emailHelper.length !== 0 
                 }
                 variant="contained"
@@ -491,19 +452,7 @@ export default function Contact(props) {
     </ButtonGroup>
 </Grid>
 </Grid>
-
         </Grid>
-        {/* <Grid item>
-          <Button
-            component={Link}
-            href="/consultation"
-            variant="contained"
-            className={classes.consultationButton}
-            onClick={() => props.setValue(5)}
-          >
-            Consultation
-          </Button>
-        </Grid> */}
       </Grid>
     </Grid>
   );

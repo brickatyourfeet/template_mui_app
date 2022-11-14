@@ -180,25 +180,7 @@ I live in the Pacific Northwest with my husband & two kids, and we are lucky eno
             Every drop is chock-full of vital plant nutrients and energy to elicit deep healing and nourishment.              </Typography>
             </Grid>
             </Grid>
-
             </Grid>
-
-
-        {/* <Grid item>
-          <Grid item container justifyContent="center" lg>
-            <img
-              src="/assets/basket.jpg"
-              alt="imagalt"
-              style={{ maxHeight: matchesMD ? 350 : "44em", filter: "grayscale(100%)" }}
-            />
-          </Grid>
-        </Grid> */}
-
-
-
-
-
-
       <Grid item>
         <CallToAction setValue={props.setValue} />
       </Grid>
