@@ -20,6 +20,6 @@ module.exports = withPlugins([
     /* config for next-optimized-images */
   }],
   nextConfig
-  // your other plugins here
+  // your other plugins here //
 
 ]);
