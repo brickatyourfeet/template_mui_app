@@ -17,7 +17,7 @@ export default function handler(req, res) {
         path => `<url>
       ${
         path === "/index"  //checks for this because /index is not actually our home route, its just /
-          ? `<loc>https://rainierelixiers.com</loc>`
+          ? `<loc>https://rainierelixirs.com</loc>`
           : `<loc>https://rainierelixirs.com${path}</loc>`
       }
       <lastmod>${
