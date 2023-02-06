@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Link from "../src/Link"
+import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {Grid, Typography, ButtonGroup, Button, TextField, useMediaQuery, Dialog, DialogContent, CircularProgress, Snackbar} from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  ButtonGroup,
+  Button,
+  TextField,
+  useMediaQuery,
+  Dialog,
+  DialogContent,
+  CircularProgress,
+  Snackbar,
+} from "@material-ui/core";
 import Head from "next/head";
 import ButtonArrow from "../src/ui/ButtonArrow";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   background: {
     backgroundImage: `url("/assets/ctabg0.jpg")`,
     backgroundPosition: "center",
@@ -16,8 +27,8 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: "10em", //for lifting / aligning background -- may change this based on bg
     [theme.breakpoints.down("md")]: {
       backgroundImage: `url("/assets/nettle-mobile.jpg")`,
-      filter: "grayscale(100%)" //let's goooooooooooooo
-    }
+      filter: "grayscale(100%)", //let's goooooooooooooo
+    },
   },
   consultationButton: {
     ...theme.typography.consultation,
@@ -30,12 +41,12 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "2em",
     "&:hover": {
       backgroundColor: theme.palette.secondary.light,
-      fontColor: "white"
+      fontColor: "white",
     },
     [theme.breakpoints.down("md")]: {
       marginLeft: 0,
-      marginRight: 0
-    }
+      marginRight: 0,
+    },
   },
   learnButton: {
     ...theme.typography.learnButton,
@@ -44,13 +55,13 @@ const useStyles = makeStyles(theme => ({
     padding: "1rem",
     color: "white",
     [theme.breakpoints.down("md")]: {
-      marginBottom: "2em"
-    }
+      marginBottom: "2em",
+    },
   },
   message: {
     border: `2px solid black`,
     marginTop: "5em",
-    borderRadius: 5
+    borderRadius: 5,
   },
   sendButton: {
     ...theme.typography.consultation,
@@ -61,14 +72,14 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "black",
     "&:hover": {
       backgroundColor: theme.palette.secondary.light,
-      color: "black"
+      color: "black",
     },
     [theme.breakpoints.down("sm")]: {
       height: 40,
-      width: 205 
+      width: 205,
       //change these to relative sizes if needed
-    }
-  }
+    },
+  },
 }));
 
 export default function Contact(props) {
@@ -94,14 +105,18 @@ export default function Contact(props) {
   const [alert, setAlert] = useState({ open: false, color: "" });
   const [alertMessage, setAlertMesssage] = useState("");
 
-  const onChange = event => {
+  const onChange = (event) => {
     let valid;
     //can add more cases to this switch statement if fields are added - just maintain the id values
     switch (event.target.id) {
       case "email":
         setEmail(event.target.value);
-        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value);
-        !valid ? setEmailHelper("Please enter valid Email Address") : setEmailHelper(""); //using empty string to have error length of 0
+        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+          event.target.value
+        );
+        !valid
+          ? setEmailHelper("Please enter valid Email Address")
+          : setEmailHelper(""); //using empty string to have error length of 0
         break;
       default:
         break;
@@ -112,18 +127,15 @@ export default function Contact(props) {
     setLoading(true);
 
     axios
-      .get(
-        "https://us-central1-rainier-elixirs.cloudfunctions.net/sendMail",
-        {
-          params: {
-            email: email,
-            name: name,
-            //phone: phone,
-            message: message
-          }
-        }
-      )
-      .then(res => {
+      .get("https://us-central1-rainier-elixirs.cloudfunctions.net/sendMail", {
+        params: {
+          email: email,
+          name: name,
+          //phone: phone,
+          message: message,
+        },
+      })
+      .then((res) => {
         setLoading(false);
         setOpen(false);
         setName("");
@@ -134,7 +146,7 @@ export default function Contact(props) {
         //console.log(email, name, phone, message); //for testing
         console.log(email, name, message);
       })
-      .catch(err => {
+      .catch((err) => {
         setLoading(false);
         setAlert({ open: true, color: "#FF3232" }); //change these colors, and extract to theme at some point
         setAlertMesssage("Error sending message. Please try again.");
@@ -146,23 +158,42 @@ export default function Contact(props) {
   const buttonContents = (
     <React.Fragment>
       Send Message
-      <img src="/assets/send.svg" alt="paper airplane" style={{ marginLeft: "1em" }} />
+      <img
+        src="/assets/send.svg"
+        alt="paper airplane"
+        style={{ marginLeft: "1em" }}
+      />
     </React.Fragment>
   );
 
   return (
     <Grid container direction="row">
-    <Head>
-      <title key="title">
-      Rainier Elixirs | Contact Us By Phone, Email or Instagram
-      </title>
-      <meta name="description" key="description" content="Send us your questions & comments. Have an elixir 
+      <Head>
+        <title key="title">
+          Rainier Elixirs | Contact Us By Phone, Email or Instagram
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Send us your questions & comments. Have an elixir 
       request? Want to know which elixir is best for you? Tell us about it! "
-      />
-      <meta property="og:title" content="Rainier Elixirs | Contact Us on Instagram, Phone, Email" key="og:title" />
-      <meta property="og:url" key="og:url" content="rainierelixirs.com/contact" />
-      <link rel="canonical" key="canonical" href="rainierelixirs.com/contact" /> 
-    </Head>
+        />
+        <meta
+          property="og:title"
+          content="Rainier Elixirs | Contact Us on Instagram, Phone, Email"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="rainierelixirs.com/contact"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="rainierelixirs.com/contact"
+        />
+      </Head>
       <Grid
         item
         container
@@ -174,13 +205,17 @@ export default function Contact(props) {
           marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0,
           backgroundImage: `url("/assets/leftdala5.jpg")`, /////mandala half here
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover"
+          backgroundSize: "cover",
         }}
         lg={4}
         xl={3}
       >
         <Grid item>
-          <Grid container direction="column" style={{paddingTop: matchesXS ? "5em": null}}>
+          <Grid
+            container
+            direction="column"
+            style={{ paddingTop: matchesXS ? "5em" : null }}
+          >
             <Grid item>
               <Typography
                 align={matchesMD ? "center" : undefined}
@@ -192,7 +227,12 @@ export default function Contact(props) {
               <Typography
                 align={matchesMD ? "center" : undefined}
                 variant="subtitle2"
-                style={{ color: "black", textShadow: "1px 1px black", fontSize: "0.8rem", fontStyle: "italic" }}
+                style={{
+                  color: "black",
+                  textShadow: "1px 1px black",
+                  fontSize: "0.8rem",
+                  fontStyle: "italic",
+                }}
               >
                 (Use IG for quicker response)
               </Typography>
@@ -208,15 +248,24 @@ export default function Contact(props) {
               <Grid item>
                 <Typography
                   variant="body1"
-                  style={{ color: "black", fontSize: "1rem", textShadow: "1px 1px black" }}
+                  style={{
+                    color: "black",
+                    fontSize: "1rem",
+                    textShadow: "1px 1px black",
+                  }}
                 >
                   <a
                     href="tel:2069733729" //could get rid of this to have no mobile clickability
-                    style={{ textDecoration: "none", color: "inherit", textShadow: "1px 1px black" }}
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      textShadow: "1px 1px black",
+                    }}
                   >
                     (206) 973-3729
                   </a>
-                </Typography> {/** add social media icons / info too? */}
+                </Typography>{" "}
+                {/** add social media icons / info too? */}
               </Grid>
             </Grid>
             <Grid item container style={{ marginBottom: "2em" }}>
@@ -230,7 +279,11 @@ export default function Contact(props) {
               <Grid item>
                 <Typography
                   variant="body1"
-                  style={{ color: "black", fontSize: "1rem", textShadow: "1px 1px black" }}
+                  style={{
+                    color: "black",
+                    fontSize: "1rem",
+                    textShadow: "1px 1px black",
+                  }}
                 >
                   <a
                     href="mailto:rainierelixirs@gmail.com"
@@ -248,7 +301,7 @@ export default function Contact(props) {
                   id="name"
                   fullWidth
                   value={name}
-                  onChange={event => setName(event.target.value)}
+                  onChange={(event) => setName(event.target.value)}
                 />
               </Grid>
               <Grid item style={{ marginBottom: "0.5em" }}>
@@ -262,8 +315,7 @@ export default function Contact(props) {
                   onChange={onChange}
                 />
               </Grid>
-              <Grid item style={{ marginBottom: "0.5em" }}>
-              </Grid>
+              <Grid item style={{ marginBottom: "0.5em" }}></Grid>
             </Grid>
             <Grid item style={{ width: "20em" }}>
               <TextField
@@ -274,16 +326,21 @@ export default function Contact(props) {
                 fullWidth
                 rows={8}
                 id="message"
-                onChange={event => setMessage(event.target.value)}
+                onChange={(event) => setMessage(event.target.value)}
               />
             </Grid>
-            <Grid item container justifyContent="center" style={{ marginTop: "2em" }}>
+            <Grid
+              item
+              container
+              justifyContent="center"
+              style={{ marginTop: "2em" }}
+            >
               <Button
                 disabled={
                   name.length === 0 ||
                   message.length === 0 ||
                   email.length === 0 ||
-                  emailHelper.length !== 0 
+                  emailHelper.length !== 0
                 }
                 variant="contained"
                 className={classes.sendButton}
@@ -298,16 +355,29 @@ export default function Contact(props) {
       <Dialog
         style={{ zIndex: 1302 }} //to have modal over the app bar z index
         open={open}
-        fullScreen={matchesSM}  //takes up entire screen if on phone
+        fullScreen={matchesSM} //takes up entire screen if on phone
         onClose={() => setOpen(false)}
-        PaperProps={{ //passing style down to the 'paper' component
+        PaperProps={{
+          //passing style down to the 'paper' component
           style: {
             paddingTop: matchesXS ? "1em" : "5em",
             paddingBottom: matchesXS ? "1em" : "5em",
-            paddingLeft: matchesXS ? 0 : matchesSM ? 0 : matchesMD ? "11em" : "15em",
-            paddingRight: matchesXS ? 0 : matchesSM ? 0 : matchesMD ? "11em" : "15em"
+            paddingLeft: matchesXS
+              ? 0
+              : matchesSM
+              ? 0
+              : matchesMD
+              ? "11em"
+              : "15em",
+            paddingRight: matchesXS
+              ? 0
+              : matchesSM
+              ? 0
+              : matchesMD
+              ? "11em"
+              : "15em",
             //double check above styles with different devices, add more media queries if needed
-          }
+          },
         }}
       >
         <DialogContent>
@@ -323,7 +393,7 @@ export default function Contact(props) {
                 id="name"
                 fullWidth
                 value={name}
-                onChange={event => setName(event.target.value)}
+                onChange={(event) => setName(event.target.value)}
               />
             </Grid>
             <Grid item style={{ marginBottom: "0.5em" }}>
@@ -337,10 +407,11 @@ export default function Contact(props) {
                 onChange={onChange}
               />
             </Grid>
-            <Grid item style={{ marginBottom: "0.5em" }}>
-            </Grid>
+            <Grid item style={{ marginBottom: "0.5em" }}></Grid>
           </Grid>
-          <Grid item style={{ width: matchesSM ? "100%" : "20em" }}>  {/** message box is full and centered on small devices */}
+          <Grid item style={{ width: matchesSM ? "100%" : "20em" }}>
+            {" "}
+            {/** message box is full and centered on small devices */}
             <TextField
               InputProps={{ disableUnderline: true }}
               value={message}
@@ -349,7 +420,7 @@ export default function Contact(props) {
               fullWidth
               rows={10}
               id="message"
-              onChange={event => setMessage(event.target.value)}
+              onChange={(event) => setMessage(event.target.value)}
             />
           </Grid>
           <Grid
@@ -374,13 +445,17 @@ export default function Contact(props) {
                   name.length === 0 ||
                   message.length === 0 ||
                   email.length === 0 ||
-                  emailHelper.length !== 0 
+                  emailHelper.length !== 0
                 }
                 variant="contained"
-                className={classes.sendButton} //style these buttons differently 
+                className={classes.sendButton} //style these buttons differently
                 onClick={onConfirm}
               >
-                {loading ? <CircularProgress color="secondary" size={30} /> : buttonContents}
+                {loading ? (
+                  <CircularProgress color="secondary" size={30} />
+                ) : (
+                  buttonContents
+                )}
               </Button>
             </Grid>
           </Grid>
@@ -390,8 +465,8 @@ export default function Contact(props) {
         open={alert.open}
         ContentProps={{
           style: {
-            backgroundColor: alert.color
-          }
+            backgroundColor: alert.color,
+          },
         }}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         message={alertMessage}
@@ -412,46 +487,65 @@ export default function Contact(props) {
           item //call to action again but different for this page, could render different based on location hook?
           style={{
             marginLeft: matchesMD ? 0 : "3em",
-            textAlign: matchesMD ? "center" : "inherit"
+            textAlign: matchesMD ? "center" : "inherit",
           }}
-        > 
-          <Grid container direction="column">
-
-          <Grid container justifyContent={matchesSM ? "center" : undefined} item style={{paddingTop: "2rem"}}>
-
-<ButtonGroup
-      orientation="vertical"
-      color="primary"
-      aria-label="vertical contained primary button group"
-      variant="text"
-    >
-      <Button 
-        href="https://www.etsy.com/shop/rainierelixirs/"
-        rel="noopener noreferrer"
-        target="_blank" >
-         <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.5rem" }}>
-          Shop Tinctures Now
-          </Typography>
-        </Button>
-        <Button 
-        href="/about"
-        rel="noopener noreferrer"
-         >
-         <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.3rem" }}>
-          Learn More
-          </Typography>
-        </Button>
-        <Button 
-        href="/herbz"
-        rel="noopener noreferrer"
         >
-         <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.1rem" }}>
-          Social
-          </Typography>
-        </Button>
-    </ButtonGroup>
-</Grid>
-</Grid>
+          <Grid container direction="column">
+            <Grid
+              container
+              justifyContent={matchesSM ? "center" : undefined}
+              item
+              style={{ paddingTop: "2rem" }}
+            >
+              <ButtonGroup
+                orientation="vertical"
+                color="primary"
+                aria-label="vertical contained primary button group"
+                variant="text"
+              >
+                <Button
+                  href="https://www.etsy.com/shop/rainierelixirs/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Typography
+                    variant=""
+                    style={{
+                      color: "white",
+                      textShadow: "1px 2px black",
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Shop Tinctures Now
+                  </Typography>
+                </Button>
+                <Button href="/about" rel="noopener noreferrer">
+                  <Typography
+                    variant=""
+                    style={{
+                      color: "white",
+                      textShadow: "1px 2px black",
+                      fontSize: "1.3rem",
+                    }}
+                  >
+                    Learn More
+                  </Typography>
+                </Button>
+                <Button href="/herbz" rel="noopener noreferrer">
+                  <Typography
+                    variant=""
+                    style={{
+                      color: "white",
+                      textShadow: "1px 2px black",
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    Social
+                  </Typography>
+                </Button>
+              </ButtonGroup>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

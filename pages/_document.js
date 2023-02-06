@@ -1,7 +1,7 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
-import Theme from '../src/ui/Theme';
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheets } from "@material-ui/core/styles";
+import Theme from "../src/ui/Theme";
 
 export default class MyDocument extends Document {
   render() {
@@ -13,7 +13,10 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={Theme.palette.primary.main} />
           {/* image for open graph social media sharing */}
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="https://photos.app.goo.gl/DDpj2DcMfoWhhXZT7" />
+          <meta
+            property="og:image"
+            content="https://photos.app.goo.gl/DDpj2DcMfoWhhXZT7"
+          />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
@@ -71,6 +74,9 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };

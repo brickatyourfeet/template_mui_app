@@ -1,10 +1,17 @@
-import React, {useEffect} from "react";
-import {Typography, Button, ButtonGroup, useMediaQuery, Grid, Hidden} from "@material-ui/core";
+import React, { useEffect } from "react";
+import {
+  Typography,
+  Button,
+  ButtonGroup,
+  useMediaQuery,
+  Grid,
+  Hidden,
+} from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Link from "../Link";
-import _ from 'lodash';
+import _ from "lodash";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   learnButton: {
     ...theme.typography.learnButton,
     fontSize: "0.7rem",
@@ -12,10 +19,10 @@ const useStyles = makeStyles(theme => ({
     padding: 5,
     padding: "1rem",
     [theme.breakpoints.down("sm")]: {
-      marginBottom: "2em"
-    }
-  },                                        
-  background: {                            
+      marginBottom: "2em",
+    },
+  },
+  background: {
     backgroundImage: `url("/assets/bask.jpg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -26,8 +33,8 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     [theme.breakpoints.down("md")]: {
       backgroundImage: `url("/assets/hops-mobile-cut.png")`,
-      backgroundAttachment: "inherit" //this will get rid of parallax (static) bg
-    }
+      backgroundAttachment: "inherit", //this will get rid of parallax (static) bg
+    },
   },
   consultationButton: {
     ...theme.typography.consultation,
@@ -40,15 +47,15 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "2em",
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
-      marginRight: 0
-    }
+      marginRight: 0,
+    },
   },
   ctaBlurb: {
     //backgroundColor: alpha(theme.palette.common.red, 0.4),
     borderRadius: 20,
     height: 350,
     width: 450,
-  }
+  },
 }));
 
 export default function CallToAction(props) {
@@ -70,75 +77,95 @@ export default function CallToAction(props) {
         item
         style={{
           marginLeft: matchesSM ? 0 : "5em",
-          textAlign: matchesSM ? "center" : "inherit"
+          textAlign: matchesSM ? "center" : "inherit",
         }}
       >
         <Grid container direction="column">
           <Grid item>
-            <Typography 
+            <Typography
               variant="h1"
               style={{
-                lineHeight: matchesXS ? 1.1 : null, 
+                lineHeight: matchesXS ? 1.1 : null,
                 marginBottom: matchesXS ? "0.5em" : null,
                 fontSize: "2.25em",
                 color: "white",
-                textShadow: "2px 2px black"
+                textShadow: "2px 2px black",
               }}
             >
               Wild & living herbal elixirs handcrafted in the Pacific Northwest
               <br />
             </Typography>
-            <Grid container justifyContent={matchesSM ? "center" : undefined} item style={{paddingTop: "2rem"}}>
-
+            <Grid
+              container
+              justifyContent={matchesSM ? "center" : undefined}
+              item
+              style={{ paddingTop: "2rem" }}
+            >
               <ButtonGroup
-                    orientation="vertical"
-                    color="primary"
-                    aria-label="vertical contained primary button group"
-                    variant="text"
+                orientation="vertical"
+                color="primary"
+                aria-label="vertical contained primary button group"
+                variant="text"
+              >
+                <Button
+                  href="https://www.etsy.com/shop/rainierelixirs/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Typography
+                    variant=""
+                    style={{
+                      color: "white",
+                      textShadow: "1px 2px black",
+                      fontSize: "1.5rem",
+                    }}
                   >
-                    <Button 
-                      href="https://www.etsy.com/shop/rainierelixirs/"
-                      rel="noopener noreferrer"
-                      target="_blank" >
-                       <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.5rem" }}>
-                        Shop Tinctures Now
-                        </Typography>
-                      </Button>
-                      <Button 
-                      href="/about"
-                      rel="noopener noreferrer"
-                       >
-                       <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.3rem" }}>
-                        Learn More
-                        </Typography>
-                      </Button>
-                      <Button 
-                      href="/herbz"
-                      rel="noopener noreferrer"
-                      >
-                       <Typography variant="" style={{ color: "white", textShadow: "1px 2px black", fontSize: "1.1rem" }}>
-                        Social
-                        </Typography>
-                      </Button>
-                  </ButtonGroup>
+                    Shop Tinctures Now
+                  </Typography>
+                </Button>
+                <Button href="/about" rel="noopener noreferrer">
+                  <Typography
+                    variant=""
+                    style={{
+                      color: "white",
+                      textShadow: "1px 2px black",
+                      fontSize: "1.3rem",
+                    }}
+                  >
+                    Learn More
+                  </Typography>
+                </Button>
+                <Button href="/herbz" rel="noopener noreferrer">
+                  <Typography
+                    variant=""
+                    style={{
+                      color: "white",
+                      textShadow: "1px 2px black",
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    Social
+                  </Typography>
+                </Button>
+              </ButtonGroup>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
       <Grid item>
-      <Hidden mdDown>
-        <Button
-          component={Link}
-          href="https://www.instagram.com/rainierelixirs"
-          variant="contained"
-          className={classes.consultationButton}
-          style={{color: "black"}}
-          onClick={() => props.setValue(5)}
-          rel="noopener noreferrer"
-          target="_blank" 
-        >
-          Follow
-        </Button>
+        <Hidden mdDown>
+          <Button
+            component={Link}
+            href="https://www.instagram.com/rainierelixirs"
+            variant="contained"
+            className={classes.consultationButton}
+            style={{ color: "black" }}
+            onClick={() => props.setValue(5)}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Follow
+          </Button>
         </Hidden>
       </Grid>
     </Grid>
