@@ -169,30 +169,11 @@ export default function Contact(props) {
   return (
     <Grid container direction="row">
       <Head>
-        <title key="title">
-          Rainier Elixirs | Contact Us By Phone, Email or Instagram
-        </title>
-        <meta
-          name="description"
-          key="description"
-          content="Send us your questions & comments. Have an elixir 
-      request? Want to know which elixir is best for you? Tell us about it! "
-        />
-        <meta
-          property="og:title"
-          content="Rainier Elixirs | Contact Us on Instagram, Phone, Email"
-          key="og:title"
-        />
-        <meta
-          property="og:url"
-          key="og:url"
-          content="rainierelixirs.com/contact"
-        />
-        <link
-          rel="canonical"
-          key="canonical"
-          href="rainierelixirs.com/contact"
-        />
+        <title key="title">Placeholder</title>
+        <meta name="description" key="description" content="Placeholder" />
+        <meta property="og:title" content="Placeholder" key="og:title" />
+        <meta property="og:url" key="og:url" content="Placeholder.com" />
+        <link rel="canonical" key="canonical" href="Placeholder.com" />
       </Head>
       <Grid
         item
@@ -203,7 +184,7 @@ export default function Contact(props) {
         style={{
           marginBottom: matchesMD ? "5em" : 0,
           marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0,
-          backgroundImage: `url("/assets/leftdala5.jpg")`, /////mandala half here
+          backgroundImage: `url("Placeholder.jpg")`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
@@ -222,7 +203,7 @@ export default function Contact(props) {
                 variant="body1"
                 style={{ color: "black", textShadow: "1px 1px black" }}
               >
-                Contact info
+                Placeholder
               </Typography>
               <Typography
                 align={matchesMD ? "center" : undefined}
@@ -234,13 +215,13 @@ export default function Contact(props) {
                   fontStyle: "italic",
                 }}
               >
-                (Use IG for quicker response)
+                (Placeholder)
               </Typography>
             </Grid>
             <Grid item container style={{ marginTop: "2em" }}>
               <Grid item>
                 <img
-                  src="/assets/phone.svg"
+                  src="Placeholder.svg"
                   alt="phone"
                   style={{ marginRight: "0.5em" }}
                 />
@@ -255,14 +236,14 @@ export default function Contact(props) {
                   }}
                 >
                   <a
-                    href="tel:2069733729" //could get rid of this to have no mobile clickability
+                    href="tel:Placeholder" //could get rid of this to have no mobile clickability
                     style={{
                       textDecoration: "none",
                       color: "inherit",
                       textShadow: "1px 1px black",
                     }}
                   >
-                    (206) 973-3729
+                    Placeholder
                   </a>
                 </Typography>{" "}
                 {/** add social media icons / info too? */}
@@ -286,10 +267,10 @@ export default function Contact(props) {
                   }}
                 >
                   <a
-                    href="mailto:rainierelixirs@gmail.com"
+                    href="mPlaceholder@this.com"
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
-                    rainierelixirs@gmail.com
+                    Placeholder
                   </a>
                 </Typography>
               </Grid>
@@ -384,7 +365,7 @@ export default function Contact(props) {
           <Grid container direction="column">
             <Grid item>
               <Typography align="center" variant="h4" gutterBottom>
-                Confirm Message
+                Placeholder
               </Typography>
             </Grid>
             <Grid item style={{ marginBottom: "0.5em" }}>
@@ -436,7 +417,7 @@ export default function Contact(props) {
                 color="primary"
                 onClick={() => setOpen(false)}
               >
-                Cancel
+                Placeholder
               </Button>
             </Grid>
             <Grid item>
@@ -504,7 +485,7 @@ export default function Contact(props) {
                 variant="text"
               >
                 <Button
-                  href="https://www.etsy.com/shop/rainierelixirs/"
+                  href="Placeholder.com"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -516,7 +497,7 @@ export default function Contact(props) {
                       fontSize: "1.5rem",
                     }}
                   >
-                    Shop Tinctures Now
+                    Placeholder
                   </Typography>
                 </Button>
                 <Button href="/about" rel="noopener noreferrer">
@@ -528,7 +509,7 @@ export default function Contact(props) {
                       fontSize: "1.3rem",
                     }}
                   >
-                    Learn More
+                    Placeholder
                   </Typography>
                 </Button>
                 <Button href="/herbz" rel="noopener noreferrer">
@@ -540,7 +521,7 @@ export default function Contact(props) {
                       fontSize: "1.1rem",
                     }}
                   >
-                    Social
+                    Placeholder
                   </Typography>
                 </Button>
               </ButtonGroup>

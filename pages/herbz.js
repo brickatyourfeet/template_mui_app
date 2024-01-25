@@ -7,7 +7,7 @@ import Head from "next/head";
 
 import CallToAction from "../src/ui/CallToAction";
 
-const rainierFeed = "rainierelixirs";
+const placeholderFeed = "placeholderFeed";
 
 const useStyles = makeStyles((theme) => ({
   rowContainer: {
@@ -38,28 +38,19 @@ export default function Herbz(props) {
       }}
     >
       <Head>
-        <title key="title">Rainier Elixirs | Instagram, News & Photos</title>
+        <title key="title">Placeholder</title>
         <meta
           name="description"
           key="description"
-          content="For the most up to date info & photos about our 
-      herbal elixirs & releases, check out our Instagram. Sale announcements, coupons & shop drop updates!"
+          content="Placeholder"
           //this one is super important above - work on it
         />
-        <meta
-          property="og:title"
-          content="Rainier Elixirs | Social Media, current happenings & photos"
-          key="og:title"
-        />
-        <meta
-          property="og:url"
-          key="og:url"
-          content="rainierelixirs.com/herbz"
-        />
-        <link rel="canonical" key="canonical" href="rainierelixirs.com/herbz" />
+        <meta property="og:title" content="Placeholder" key="og:title" />
+        <meta property="og:url" key="og:url" content="Placeholder" />
+        <link rel="canonical" key="canonical" href="Placeholder" />
       </Head>
       {/* <JuicerFeed crossorigin feedId={rainierFeed} style={{}} data-filter="Instagram, Tumblr"/> */}
-      <JuicerFeed feedId={rainierFeed} />
+      <JuicerFeed feedId={placeholderFeed} />
       {/* <iframe target="_parent" src="https://rainierelixirs.tumblr.com/" width="100%" height="1000" frameborder="0"></iframe> */}
 
       <Grid item>
